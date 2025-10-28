@@ -5,7 +5,7 @@ import { generateQuoteEmailHTML, generateQuoteEmailText } from '@/lib/email-temp
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, email, company, message } = body
+    const { name, email, company, message, recaptchaToken } = body
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -13,6 +13,46 @@ export async function POST(request: NextRequest) {
         { error: 'Missing required fields' },
         { status: 400 }
       )
+    }
+
+    // Verify reCAPTCHA token
+    if (!recaptchaToken) {
+      return NextResponse.json(
+        { error: 'reCAPTCHA validation failed' },
+        { status: 400 }
+      )
+    }
+
+    // Verify reCAPTCHA with Google
+    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY
+    if (recaptchaSecret) {
+      try {
+        const recaptchaResponse = await fetch(
+          'https://www.google.com/recaptcha/api/siteverify',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `secret=${recaptchaSecret}&response=${recaptchaToken}`,
+          }
+        )
+
+        const recaptchaData = await recaptchaResponse.json()
+
+        if (!recaptchaData.success || recaptchaData.score < 0.5) {
+          console.warn('reCAPTCHA verification failed:', recaptchaData)
+          return NextResponse.json(
+            { error: 'Bot detected. Please try again.' },
+            { status: 403 }
+          )
+        }
+
+        console.log('reCAPTCHA score:', recaptchaData.score)
+      } catch (recaptchaError) {
+        console.error('reCAPTCHA verification error:', recaptchaError)
+        // Continue anyway if reCAPTCHA service is down
+      }
     }
 
     // Check if API key is configured
