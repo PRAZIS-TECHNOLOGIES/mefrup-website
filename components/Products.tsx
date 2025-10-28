@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Download, CheckCircle, Search, Thermometer, Shield, Wrench } from 'lucide-react'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 
 export default function Products() {
@@ -11,7 +11,7 @@ export default function Products() {
   const [selectedType, setSelectedType] = useState('standard')
   const [selectedMaterialCategory, setSelectedMaterialCategory] = useState('rubber')
 
-  const gasketTypes = [
+  const gasketTypes = useMemo(() => [
     {
       id: 'standard',
       name: t?.products?.standardType || 'Standard Tri-Clamp',
@@ -33,7 +33,7 @@ export default function Products() {
       thickness: '3/64"',
       materials: ['PTFE', 'NBR']
     }
-  ]
+  ], [t])
 
   const sizes = [
     { dimension: '1/2"', id: '3/8"', od: '1"' },

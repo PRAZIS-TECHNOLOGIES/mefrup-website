@@ -114,9 +114,6 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <div className="py-2 pb-40">
-                <LanguageSelector />
-              </div>
               <Link
                 href="/#contact"
                 className="flex items-center justify-center gap-2 w-full text-center bg-primary hover:bg-primary-dark text-white px-6 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg"
@@ -127,6 +124,9 @@ export default function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
+              <div className="pt-4 pb-48">
+                <LanguageSelector />
+              </div>
             </div>
           </motion.div>
         )}
