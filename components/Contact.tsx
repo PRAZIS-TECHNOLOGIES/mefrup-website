@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react'
+import { MapPin, Send, Clock } from 'lucide-react'
 import { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -14,10 +14,35 @@ export default function Contact() {
     message: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Form submission logic would go here
-    alert('Thank you! We will contact you within 24 hours.')
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/ventas@mefrup.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          _subject: `New Quote Request from ${formData.name}`,
+          _template: 'table',
+        })
+      })
+
+      if (response.ok) {
+        alert('Thank you! We will contact you within 24 hours.')
+        setFormData({ name: '', email: '', company: '', message: '' })
+      } else {
+        alert('There was an error sending your request. Please try again.')
+      }
+    } catch (error) {
+      alert('There was an error sending your request. Please try again.')
+    }
   }
 
   return (
@@ -40,44 +65,16 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Quick Contact Cards */}
+          {/* Quick Contact Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-3 grid md:grid-cols-3 gap-6 mb-4"
+            className="lg:col-span-3 flex justify-center mb-4"
           >
-            <div className="bg-white p-6 rounded-xl border-2 border-gray-200 hover:border-primary/50 transition-all duration-300">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <Mail className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-secondary mb-1">{t?.contact?.email || 'Email'}</p>
-                  <a href="mailto:info@mefrup.com" className="font-bold text-foreground hover:text-primary transition-colors">
-                    info@mefrup.com
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border-2 border-gray-200 hover:border-primary/50 transition-all duration-300">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <Phone className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-secondary mb-1">{t?.contact?.phone || 'Phone'}</p>
-                  <a href="tel:+52XXXXXXXXXX" className="font-bold text-foreground hover:text-primary transition-colors">
-                    +52 (XXX) XXX-XXXX
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border-2 border-gray-200 hover:border-primary/50 transition-all duration-300">
-              <div className="flex items-center gap-4">
+            <div className="bg-white p-6 rounded-xl border-2 border-gray-200 hover:border-primary/50 transition-all duration-300 max-w-md w-full">
+              <div className="flex items-center gap-4 justify-center">
                 <div className="bg-primary/10 p-3 rounded-lg">
                   <Clock className="w-6 h-6 text-primary" />
                 </div>
