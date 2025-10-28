@@ -18,7 +18,7 @@ export default function LanguageSelector() {
   const currentLang = languages.find((lang) => lang.code === language)
 
   return (
-    <div className="relative">
+    <div className="relative z-[60]">
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.05 }}
@@ -49,7 +49,7 @@ export default function LanguageSelector() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-40"
+              className="fixed inset-0 z-[55]"
             />
 
             {/* Dropdown */}
@@ -58,7 +58,7 @@ export default function LanguageSelector() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="absolute right-0 sm:right-0 left-0 sm:left-auto mt-2 w-full sm:w-48 bg-white rounded-xl shadow-2xl border-2 border-gray-200 overflow-hidden z-50 max-h-[280px] overflow-y-auto"
+              className="absolute right-0 sm:right-0 left-0 sm:left-auto mt-2 w-full sm:w-48 bg-white rounded-xl shadow-2xl border-2 border-gray-200 z-[70]"
             >
               {languages.map((lang, index) => (
                 <motion.button
@@ -70,7 +70,7 @@ export default function LanguageSelector() {
                     setLanguage(lang.code as 'en' | 'es' | 'de')
                     setIsOpen(false)
                   }}
-                  className={`w-full flex items-center justify-between px-4 py-3 transition-all duration-200 ${
+                  className={`w-full flex items-center justify-between px-4 py-3 sm:py-3 transition-all duration-200 ${
                     language === lang.code
                       ? 'bg-primary text-white'
                       : 'hover:bg-gray-50 text-foreground'

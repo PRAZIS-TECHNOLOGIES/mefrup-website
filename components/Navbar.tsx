@@ -101,7 +101,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-border overflow-hidden"
+            className="md:hidden bg-white border-t border-border"
           >
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
@@ -114,7 +114,7 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <div className="py-2">
+              <div className="py-2 pb-40">
                 <LanguageSelector />
               </div>
               <Link
