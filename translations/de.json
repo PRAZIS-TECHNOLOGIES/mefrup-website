@@ -48,9 +48,7 @@
     "industrial": {
       "title": "Industriekomponenten",
       "description": "Vulkanisierte Gummi- und Kunststoffteile für anspruchsvolle Industriemaschinen und -ausrüstung.",
-      "features": ["Schwerlastan
-
-wendungen", "Lange Lebensdauer", "Kundenspezifische Spezifikationen"]
+      "features": ["Schwerlastanwendungen", "Lange Lebensdauer", "Kundenspezifische Spezifikationen"]
     },
     "production": {
       "title": "Kritische Produktionsteile",
