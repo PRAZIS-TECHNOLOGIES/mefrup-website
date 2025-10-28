@@ -2,44 +2,47 @@
 
 import { motion } from 'framer-motion'
 import { Car, Settings, Package, Shield, Cog, Zap } from 'lucide-react'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Services() {
+  const { t } = useLanguage()
+
   const services = [
     {
       icon: Car,
-      title: 'Automotive Sealing Systems',
-      description: 'Sealing components that meet OEM specifications for durability and performance in automotive applications.',
-      features: ['Custom designs', 'Weather-resistant materials', 'OEM/ORM quality'],
+      title: t?.services?.automotive?.title || 'Automotive Sealing Systems',
+      description: t?.services?.automotive?.description || 'Sealing components that meet OEM specifications for durability and performance in automotive applications.',
+      features: t?.services?.automotive?.features || ['Custom designs', 'Weather-resistant materials', 'OEM/ORM quality'],
     },
     {
       icon: Cog,
-      title: 'Industrial Components',
-      description: 'Vulcanized rubber and plastic parts for demanding industrial machinery and equipment.',
-      features: ['Heavy-duty applications', 'Long service life', 'Custom specifications'],
+      title: t?.services?.industrial?.title || 'Industrial Components',
+      description: t?.services?.industrial?.description || 'Vulcanized rubber and plastic parts for demanding industrial machinery and equipment.',
+      features: t?.services?.industrial?.features || ['Heavy-duty applications', 'Long service life', 'Custom specifications'],
     },
     {
       icon: Settings,
-      title: 'Critical Production Parts',
-      description: 'Reliable components manufactured to minimize downtime in production environments.',
-      features: ['Fast replacement', 'Consistent quality', '24/7 support available'],
+      title: t?.services?.production?.title || 'Critical Production Parts',
+      description: t?.services?.production?.description || 'Reliable components manufactured to minimize downtime in production environments.',
+      features: t?.services?.production?.features || ['Fast replacement', 'Consistent quality', '24/7 support available'],
     },
     {
       icon: Package,
-      title: 'ORM Replacement Parts',
-      description: 'Exact-fit replacement components as Original Replacement Manufacturer, specializing in rubber seals and gaskets.',
-      features: ['Direct replacement', 'Cost-effective', 'Quick delivery'],
+      title: t?.services?.orm?.title || 'ORM Replacement Parts',
+      description: t?.services?.orm?.description || 'Exact-fit replacement components as Original Replacement Manufacturer, specializing in rubber seals and gaskets.',
+      features: t?.services?.orm?.features || ['Direct replacement', 'Cost-effective', 'Quick delivery'],
     },
     {
       icon: Shield,
-      title: 'OEM Supply',
-      description: 'Direct supply to automotive OEMs with full quality management and traceability.',
-      features: ['IATF 16949 certified', 'Complete traceability', 'Reliable quality'],
+      title: t?.services?.oem?.title || 'OEM Supply',
+      description: t?.services?.oem?.description || 'Direct supply to automotive OEMs with full quality management and traceability.',
+      features: t?.services?.oem?.features || ['IATF 16949 certified', 'Complete traceability', 'Reliable quality'],
     },
     {
       icon: Zap,
-      title: 'Prototyping & Development',
-      description: 'Fast prototyping and testing of new components with technical support.',
-      features: ['Quick iterations', 'Technical collaboration', 'Pre-production validation'],
+      title: t?.services?.prototyping?.title || 'Prototyping & Development',
+      description: t?.services?.prototyping?.description || 'Fast prototyping and testing of new components with technical support.',
+      features: t?.services?.prototyping?.features || ['Quick iterations', 'Technical collaboration', 'Pre-production validation'],
     },
   ]
 
@@ -55,11 +58,10 @@ export default function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Products & Services
+            {t?.services?.title || 'Products & Services'}
           </h2>
           <p className="text-xl text-secondary max-w-3xl mx-auto text-balance">
-            Precision components for automotive and industrial applications,
-            backed by 22+ years of manufacturing experience and ISO-certified quality.
+            {t?.services?.subtitle || 'Precision components for automotive and industrial applications, backed by 22+ years of manufacturing experience and ISO-certified quality.'}
           </p>
         </motion.div>
 

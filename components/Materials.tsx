@@ -4,8 +4,10 @@ import { motion } from 'framer-motion'
 import { Thermometer, Shield, Wrench } from 'lucide-react'
 import { useState } from 'react'
 import Link from 'next/link'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Materials() {
+  const { t } = useLanguage()
   const [selectedCategory, setSelectedCategory] = useState('rubber')
 
   const rubberMaterials = [
@@ -136,11 +138,10 @@ export default function Materials() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Available Materials
+            {t?.materials?.title || 'Available Materials'}
           </h2>
           <p className="text-xl text-secondary max-w-3xl mx-auto">
-            Comprehensive range of rubber compounds and engineering plastics
-            for diverse application requirements.
+            {t?.materials?.subtitle || 'Comprehensive range of rubber compounds and engineering plastics for diverse application requirements.'}
           </p>
         </motion.div>
 
@@ -163,7 +164,7 @@ export default function Materials() {
             }`}
           >
             <Shield className="w-5 h-5" />
-            Rubber Compounds
+            {t?.materials?.rubberCompounds || 'Rubber Compounds'}
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -176,7 +177,7 @@ export default function Materials() {
             }`}
           >
             <Wrench className="w-5 h-5" />
-            Engineering Plastics
+            {t?.materials?.engineeringPlastics || 'Engineering Plastics'}
           </motion.button>
         </motion.div>
 
@@ -234,13 +235,13 @@ export default function Materials() {
             <div>
               <h4 className="font-bold text-foreground mb-2">
                 {selectedCategory === 'rubber'
-                  ? 'Rubber Compounds'
-                  : 'Engineering Plastics (Injection Molded)'}
+                  ? (t?.materials?.rubberCompounds || 'Rubber Compounds')
+                  : (t?.materials?.engineeringPlastics || 'Engineering Plastics (Injection Molded)')}
               </h4>
               <p className="text-secondary text-sm leading-relaxed">
                 {selectedCategory === 'rubber'
-                  ? 'Our rubber compounds are selected for their specific resistance properties, temperature ranges, and application suitability. All materials meet or exceed industry standards for sealing applications.'
-                  : 'Engineering-grade thermoplastics manufactured through precision injection molding. These materials provide excellent mechanical properties, dimensional stability, and chemical resistance for demanding applications.'}
+                  ? (t?.materials?.rubberDescription || 'Our rubber compounds are selected for their specific resistance properties, temperature ranges, and application suitability. All materials meet or exceed industry standards for sealing applications.')
+                  : (t?.materials?.plasticsDescription || 'Engineering-grade thermoplastics manufactured through precision injection molding. These materials provide excellent mechanical properties, dimensional stability, and chemical resistance for demanding applications.')}
               </p>
             </div>
           </div>
@@ -258,7 +259,7 @@ export default function Materials() {
             href="/products"
             className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
           >
-            View Complete Product Catalog
+            {t?.materials?.viewCatalog || 'View Complete Product Catalog'}
           </Link>
         </motion.div>
 
@@ -271,17 +272,16 @@ export default function Materials() {
           className="text-center bg-primary text-white p-12 rounded-3xl shadow-lg relative overflow-hidden border-2 border-primary-dark"
         >
           <h3 className="text-3xl font-bold mb-4">
-            Need Custom Components?
+            {t?.materials?.needCustom || 'Need Custom Components?'}
           </h3>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Our team is ready to discuss your requirements and manufacture
-            components to your exact specifications.
+            {t?.materials?.customDescription || 'Our team is ready to discuss your requirements and manufacture components to your exact specifications.'}
           </p>
           <a
             href="#contact"
             className="inline-block bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:shadow-lg shadow-md hover:scale-105"
           >
-            Discuss Your Project
+            {t?.materials?.discussProject || 'Discuss Your Project'}
           </a>
         </motion.div>
       </div>

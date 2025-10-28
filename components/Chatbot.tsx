@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { MessageCircle, X, Send, Bot } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLanguage } from '@/context/LanguageContext'
 
 interface Message {
   id: number
@@ -12,6 +13,7 @@ interface Message {
 }
 
 export default function Chatbot() {
+  const { t } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -33,10 +35,10 @@ export default function Chatbot() {
   }, [messages])
 
   const quickReplies = [
-    'Request a quote',
-    'Our certifications',
-    'Services offered',
-    'Contact information',
+    t?.chatbot?.requestQuote || 'Request a quote',
+    t?.chatbot?.certifications || 'Our certifications',
+    t?.chatbot?.servicesOffered || 'Services offered',
+    t?.chatbot?.contactInfo || 'Contact information',
   ]
 
   const getBotResponse = (userMessage: string): string => {
@@ -160,8 +162,8 @@ export default function Chatbot() {
                 className="w-12 h-12 object-contain"
               />
               <div>
-                <h3 className="font-bold">MEFRUP Assistant</h3>
-                <p className="text-xs opacity-90">Online • Typically replies instantly</p>
+                <h3 className="font-bold">{t?.chatbot?.title || 'MEFRUP Assistant'}</h3>
+                <p className="text-xs opacity-90">{t?.chatbot?.online || 'Online'} • {t?.chatbot?.typicallyReplies || 'Typically replies instantly'}</p>
               </div>
             </div>
 
@@ -199,7 +201,7 @@ export default function Chatbot() {
             {/* Quick Replies */}
             {messages.length <= 1 && (
               <div className="px-4 py-3 bg-white border-t border-gray-200">
-                <p className="text-xs text-secondary mb-2">Quick questions:</p>
+                <p className="text-xs text-secondary mb-2">{t?.chatbot?.quickQuestions || 'Quick questions'}:</p>
                 <div className="flex flex-wrap gap-2">
                   {quickReplies.map((reply) => (
                     <button
@@ -222,13 +224,13 @@ export default function Chatbot() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Type your message..."
+                  placeholder={t?.chatbot?.typeMessage || 'Type your message...'}
                   className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-200"
                 />
                 <button
                   onClick={() => handleSendMessage()}
                   className="bg-primary hover:bg-primary-dark text-white p-3 rounded-lg transition-all duration-200 hover:shadow-lg"
-                  aria-label="Send message"
+                  aria-label={t?.chatbot?.sendMessage || 'Send message'}
                 >
                   <Send className="w-5 h-5" />
                 </button>

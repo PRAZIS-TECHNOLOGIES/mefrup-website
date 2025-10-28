@@ -1,7 +1,9 @@
 import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail } from 'lucide-react'
 import Link from 'next/link'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Footer() {
+  const { t } = useLanguage()
   const currentYear = new Date().getFullYear()
 
   const footerLinks = {
@@ -44,8 +46,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Precision plastic and vulcanized rubber components for the automotive industry.
-              IATF 16949:2016 certified with 22 years of manufacturing excellence.
+              {t?.footer?.tagline || 'Precision Manufacturer of Automotive Components'}
             </p>
             <div className="flex items-center gap-2 text-sm text-gray-300 mb-4">
               <Mail className="w-4 h-4" />
@@ -71,7 +72,7 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="text-lg font-bold mb-4">Company</h4>
+            <h4 className="text-lg font-bold mb-4">{t?.nav?.about || 'About'}</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -88,7 +89,7 @@ export default function Footer() {
 
           {/* Services Links */}
           <div>
-            <h4 className="text-lg font-bold mb-4">Services</h4>
+            <h4 className="text-lg font-bold mb-4">{t?.nav?.services || 'Services'}</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
@@ -105,7 +106,7 @@ export default function Footer() {
 
           {/* Support Links */}
           <div>
-            <h4 className="text-lg font-bold mb-4">Support</h4>
+            <h4 className="text-lg font-bold mb-4">{t?.footer?.contact || 'Contact'}</h4>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
@@ -146,10 +147,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
           <p>
-            © {currentYear} MEFRUP Group LLC. All rights reserved.
+            © {currentYear} MEFRUP Group LLC. {t?.footer?.rights || 'All rights reserved.'}
           </p>
           <p className="text-center">
-            Where German Standards Meet Mexican Agility
+            {t?.footer?.quality || 'IATF 16949:2016 Certified Quality | Audited by DQS Germany'}
           </p>
         </div>
       </div>

@@ -1,0 +1,188 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "services": "Dienstleistungen",
+    "certifications": "Zertifizierungen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "requestQuote": "Angebot anfordern"
+  },
+  "hero": {
+    "certified": "IATF 16949:2016 Zertifiziert",
+    "title": "Präzisionsfertigung von Automobilkomponenten",
+    "subtitle": "OEM/ORM-Lieferant spezialisiert auf vulkanisierte Gummi- und technische Kunststoffkomponenten. Über 22 Jahre Fertigungsexzellenz mit DQS Deutschland-geprüften Prozessen.",
+    "yearsExperience": "Jahre Erfahrung",
+    "certifiedQuality": "Zertifizierte Qualität",
+    "oemSupplier": "OEM/ORM-Lieferant",
+    "getQuote": "Angebot anfordern",
+    "viewProducts": "Produkte ansehen"
+  },
+  "anniversary": {
+    "celebrating": "FEIERN",
+    "years": "22 JAHRE",
+    "excellence": "Fertigungsexzellenz",
+    "tagline": "Wo Deutsche Qualität auf Mexikanische Agilität trifft",
+    "stats": {
+      "years": "JAHRE",
+      "yearsLabel": "Exzellenz",
+      "iatf": "IATF",
+      "iatfLabel": "16949:2016",
+      "iatfSublabel": "Zertifiziert",
+      "dqs": "DQS",
+      "dqsLabel": "DEUTSCHLAND",
+      "dqsSublabel": "Auditiert",
+      "quality": "100%",
+      "qualityLabel": "OEM/ORM",
+      "qualitySublabel": "Qualität"
+    }
+  },
+  "services": {
+    "title": "Produkte und Dienstleistungen",
+    "subtitle": "Präzisionskomponenten für Automobil- und Industrieanwendungen, unterstützt durch über 22 Jahre Fertigungserfahrung und ISO-zertifizierte Qualität.",
+    "automotive": {
+      "title": "Automobil-Dichtsysteme",
+      "description": "Dichtungskomponenten, die OEM-Spezifikationen für Langlebigkeit und Leistung in Automobilanwendungen erfüllen.",
+      "features": ["Kundenspezifische Designs", "Wetterbeständige Materialien", "OEM/ORM-Qualität"]
+    },
+    "industrial": {
+      "title": "Industriekomponenten",
+      "description": "Vulkanisierte Gummi- und Kunststoffteile für anspruchsvolle Industriemaschinen und -ausrüstung.",
+      "features": ["Schwerlastan
+
+wendungen", "Lange Lebensdauer", "Kundenspezifische Spezifikationen"]
+    },
+    "production": {
+      "title": "Kritische Produktionsteile",
+      "description": "Zuverlässige Komponenten zur Minimierung von Ausfallzeiten in Produktionsumgebungen.",
+      "features": ["Schneller Ersatz", "Konstante Qualität", "24/7-Support verfügbar"]
+    },
+    "orm": {
+      "title": "ORM-Ersatzteile",
+      "description": "Passgenau als Original-Ersatzteilhersteller, spezialisiert auf Gummidichtungen und -packungen.",
+      "features": ["Direkter Ersatz", "Kosteneffizient", "Schnelle Lieferung"]
+    },
+    "oem": {
+      "title": "OEM-Belieferung",
+      "description": "Direktlieferung an Automobil-OEMs mit vollständigem Qualitätsmanagement und Rückverfolgbarkeit.",
+      "features": ["IATF 16949 zertifiziert", "Vollständige Rückverfolgbarkeit", "Zuverlässige Qualität"]
+    },
+    "prototyping": {
+      "title": "Prototyping und Entwicklung",
+      "description": "Schnelles Prototyping und Prüfung neuer Komponenten mit technischer Unterstützung.",
+      "features": ["Schnelle Iterationen", "Technische Zusammenarbeit", "Vorproduktionsvalidierung"]
+    }
+  },
+  "materials": {
+    "title": "Verfügbare Materialien",
+    "subtitle": "Umfassendes Sortiment an Gummimischungen und technischen Kunststoffen für diverse Anwendungsanforderungen.",
+    "rubberCompounds": "Gummimischungen",
+    "engineeringPlastics": "Technische Kunststoffe",
+    "rubberDescription": "Unsere Gummimischungen werden nach ihren spezifischen Beständigkeitseigenschaften, Temperaturbereichen und Anwendungseignung ausgewählt. Alle Materialien erfüllen oder übertreffen Industriestandards für Dichtungsanwendungen.",
+    "plasticsDescription": "Technische Thermoplaste, hergestellt durch Präzisions-Spritzguss. Diese Materialien bieten hervorragende mechanische Eigenschaften, Dimensionsstabilität und chemische Beständigkeit für anspruchsvolle Anwendungen.",
+    "viewCatalog": "Vollständigen Katalog ansehen",
+    "needCustom": "Benötigen Sie kundenspezifische Komponenten?",
+    "customDescription": "Unser Team ist bereit, Ihre Anforderungen zu besprechen und Komponenten nach Ihren exakten Spezifikationen zu fertigen.",
+    "discussProject": "Ihr Projekt besprechen"
+  },
+  "certifications": {
+    "title": "Zertifizierungen und Qualität",
+    "subtitle": "Zertifizierte und auditierte Prozesse durch international anerkannte Organisationen.",
+    "iatfTitle": "IATF 16949:2016",
+    "iatfDescription": "Automobil-Qualitätsmanagementsystem zertifiziert von DQS Deutschland.",
+    "iatfValid": "Gültig bis 14. Juli 2028",
+    "isoTitle": "ISO 9001:2015",
+    "isoDescription": "Zertifiziertes Qualitätsmanagementsystem für Fertigungsprozesse.",
+    "qualityTitle": "Qualitätswerkzeuge",
+    "qualityDescription": "Implementierung von APQP, PPAP, SPC, FMEA und kontinuierlichen Verbesserungsmethoden.",
+    "oemTitle": "Qualifizierter OEM/ORM-Lieferant",
+    "oemDescription": "Qualifizierter Lieferant für führende Automobil-OEMs mit vollständigen Rückverfolgbarkeitsfähigkeiten."
+  },
+  "about": {
+    "title": "Über MEFRUP",
+    "subtitle": "Führender Hersteller von Präzisions-Automobilkomponenten mit über zwei Jahrzehnten Exzellenz.",
+    "ourStory": "Unsere Geschichte",
+    "storyText": "Gegründet 2003, hat sich MEFRUP Group LLC als zuverlässiger Lieferant von präzisen vulkanisierten Gummi- und technischen Kunststoffkomponenten für die Automobilindustrie etabliert. Mit IATF 16949:2016-Zertifizierung und DQS Deutschland-geprüften Prozessen bieten wir OEM-Qualität mit der Agilität eines engagierten Fertigungspartners.",
+    "expertise": "Unsere Expertise",
+    "manufacturing": "Präzisionsfertigung",
+    "manufacturingText": "Modernste Anlagen ausgestattet mit modernen Maschinen für Spritzguss und Gummivulkanisation.",
+    "qualityControl": "Qualitätskontrolle",
+    "qualityControlText": "Strenge Inspektions- und Prüfprozesse in jeder Produktionsphase zur Gewährleistung der Konsistenz.",
+    "customSolutions": "Kundenspezifische Lösungen",
+    "customSolutionsText": "Engineering-Kapazität zur Entwicklung und Fertigung von Komponenten nach exakten Kundenspezifikationen.",
+    "commitment": "Unser Engagement",
+    "commitmentText": "Wir sind verpflichtet, Komponenten höchster Qualität zu liefern, die Industriestandards erfüllen oder übertreffen. Unser Team arbeitet eng mit Kunden zusammen, um sicherzustellen, dass jedes Projekt spezifikationsgerecht und termingerecht abgeschlossen wird."
+  },
+  "contact": {
+    "title": "Angebot anfordern",
+    "subtitle": "Senden Sie uns Ihre Anforderungen und wir antworten innerhalb von 24 Stunden mit technischen Spezifikationen und Preisen.",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "responseTime": "Antwortzeit",
+    "within24": "Innerhalb von 24 Stunden",
+    "name": "Name",
+    "company": "Unternehmen",
+    "projectDetails": "Projektdetails",
+    "projectPlaceholder": "Erzählen Sie uns von Ihren Anforderungen: Materialtyp, Abmessungen, Menge, Anwendung...",
+    "sendRequest": "Angebotsanfrage senden",
+    "responseNote": "Wir antworten mit technischen Spezifikationen und Preisen innerhalb von 24 Stunden.",
+    "location": "Standort",
+    "locationText": "Fertigungsanlage mit Kunden in Mexiko und den Vereinigten Staaten.",
+    "whyChoose": "Warum wir",
+    "experience": "22+ Jahre Erfahrung",
+    "certified": "OEM/ORM-zertifiziert",
+    "fastTurnaround": "Schnelle Lieferung",
+    "customSolutions": "Kundenspezifische Lösungen",
+    "iatfCertified": "IATF 16949:2016",
+    "dqsCertified": "Von DQS Deutschland zertifiziert",
+    "validUntil": "Gültig bis 14. Juli 2028"
+  },
+  "products": {
+    "title": "Produktkatalog",
+    "subtitle": "Präzisions-Dichtungen für Tri-Clamp-Anwendungen. Verfügbar in verschiedenen Materialien und Größen gemäß Ihren Spezifikationen.",
+    "productSelector": "PRODUKTWÄHLER",
+    "findPerfect": "Finden Sie Ihre perfekte Dichtung",
+    "selectorDescription": "Wählen Sie den Dichtungstyp, der Ihren Anwendungsanforderungen entspricht. Alle Abmessungen sind ungefähr und entsprechen Industriestandards.",
+    "downloadCatalog": "Vollständigen Katalog herunterladen",
+    "selectType": "Dichtungstyp auswählen",
+    "standardType": "Standard Tri-Clamp",
+    "standardDescription": "Grundlegende Dichtungslösung für Standardanwendungen",
+    "flangedType": "Flansch-Tri-Clamp",
+    "flangedDescription": "Verbesserte Abdichtung mit integriertem Wulstdesign",
+    "envelopeType": "Teflon-Umhüllung",
+    "envelopeDescription": "Chemikalienbeständig mit PTFE-Beschichtung",
+    "thickness": "Dicke",
+    "availableDimensions": "Verfügbare Abmessungen",
+    "size": "Größe",
+    "innerDiameter": "Innendurchmesser (ID)",
+    "outerDiameter": "Außendurchmesser (OD)",
+    "availableMaterials": "Verfügbare Materialien",
+    "materialsTitle": "Verfügbare Materialien",
+    "materialsSubtitle": "Wir bieten ein umfassendes Sortiment an Gummimischungen und technischen Kunststoffen, um Ihre spezifischen Anwendungsanforderungen zu erfüllen.",
+    "rubberInfo": "Unsere Gummimischungen werden nach ihren spezifischen Beständigkeitseigenschaften, Temperaturbereichen und Anwendungseignung ausgewählt. Alle Materialien erfüllen oder übertreffen Industriestandards für Dichtungsanwendungen.",
+    "plasticsInfo": "Technische Thermoplaste, hergestellt durch Präzisions-Spritzguss. Diese Materialien bieten hervorragende mechanische Eigenschaften, Dimensionsstabilität und chemische Beständigkeit für anspruchsvolle Anwendungen.",
+    "needCustom": "Benötigen Sie eine kundenspezifische Lösung?",
+    "customDescription": "Wir fertigen Komponenten nach Ihren exakten Spezifikationen. Kontaktieren Sie uns, um Ihre Material- und Designanforderungen zu besprechen.",
+    "requestCustomQuote": "Kundenspezifisches Angebot anfordern"
+  },
+  "chatbot": {
+    "title": "MEFRUP Assistent",
+    "online": "Online",
+    "typicallyReplies": "Antwortet typischerweise sofort",
+    "typeMessage": "Nachricht eingeben...",
+    "sendMessage": "Nachricht senden",
+    "quickQuestions": "Schnelle Fragen:",
+    "requestQuote": "Angebot anfordern",
+    "certifications": "Unsere Zertifizierungen",
+    "servicesOffered": "Angebotene Dienstleistungen",
+    "contactInfo": "Kontaktinformationen"
+  },
+  "footer": {
+    "tagline": "Präzisionshersteller von Automobilkomponenten",
+    "quickLinks": "Schnelllinks",
+    "contact": "Kontakt",
+    "followUs": "Folgen Sie uns",
+    "rights": "Alle Rechte vorbehalten.",
+    "quality": "IATF 16949:2016 zertifizierte Qualität | Auditiert von DQS Deutschland"
+  }
+}

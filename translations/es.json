@@ -1,0 +1,188 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "products": "Productos",
+    "services": "Servicios",
+    "certifications": "Certificaciones",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "requestQuote": "Solicitar Cotización"
+  },
+  "hero": {
+    "certified": "Certificado IATF 16949:2016",
+    "title": "Manufactura de Precisión en Componentes Automotrices",
+    "subtitle": "Proveedor OEM/ORM especializado en componentes de caucho vulcanizado y plástico de ingeniería. Más de 22 años de excelencia en manufactura con procesos auditados por DQS Alemania.",
+    "yearsExperience": "Años de Experiencia",
+    "certifiedQuality": "Calidad Certificada",
+    "oemSupplier": "Proveedor OEM/ORM",
+    "getQuote": "Solicitar Cotización",
+    "viewProducts": "Ver Productos"
+  },
+  "anniversary": {
+    "celebrating": "CELEBRANDO",
+    "years": "22 AÑOS",
+    "excellence": "de Excelencia en Manufactura",
+    "tagline": "Donde la Calidad Alemana se Encuentra con la Agilidad Mexicana",
+    "stats": {
+      "years": "AÑOS",
+      "yearsLabel": "Excelencia",
+      "iatf": "IATF",
+      "iatfLabel": "16949:2016",
+      "iatfSublabel": "Certificado",
+      "dqs": "DQS",
+      "dqsLabel": "ALEMANIA",
+      "dqsSublabel": "Auditado",
+      "quality": "100%",
+      "qualityLabel": "OEM/ORM",
+      "qualitySublabel": "Calidad"
+    }
+  },
+  "services": {
+    "title": "Productos y Servicios",
+    "subtitle": "Componentes de precisión para aplicaciones automotrices e industriales, respaldados por más de 22 años de experiencia en manufactura y calidad certificada ISO.",
+    "automotive": {
+      "title": "Sistemas de Sellado Automotriz",
+      "description": "Componentes de sellado que cumplen con especificaciones OEM para durabilidad y desempeño en aplicaciones automotrices.",
+      "features": ["Diseños personalizados", "Materiales resistentes al clima", "Calidad OEM/ORM"]
+    },
+    "industrial": {
+      "title": "Componentes Industriales",
+      "description": "Piezas de caucho vulcanizado y plástico para maquinaria y equipo industrial de alta exigencia.",
+      "features": ["Aplicaciones de trabajo pesado", "Larga vida útil", "Especificaciones personalizadas"]
+    },
+    "production": {
+      "title": "Piezas Críticas de Producción",
+      "description": "Componentes confiables manufacturados para minimizar el tiempo de inactividad en ambientes de producción.",
+      "features": ["Reemplazo rápido", "Calidad consistente", "Soporte 24/7 disponible"]
+    },
+    "orm": {
+      "title": "Piezas de Reemplazo ORM",
+      "description": "Componentes de ajuste exacto como Fabricante de Reemplazo Original, especializados en sellos y empaques de caucho.",
+      "features": ["Reemplazo directo", "Económico", "Entrega rápida"]
+    },
+    "oem": {
+      "title": "Suministro OEM",
+      "description": "Suministro directo a OEM automotrices con gestión de calidad completa y trazabilidad.",
+      "features": ["Certificado IATF 16949", "Trazabilidad completa", "Calidad confiable"]
+    },
+    "prototyping": {
+      "title": "Prototipado y Desarrollo",
+      "description": "Prototipado rápido y pruebas de nuevos componentes con soporte técnico.",
+      "features": ["Iteraciones rápidas", "Colaboración técnica", "Validación pre-producción"]
+    }
+  },
+  "materials": {
+    "title": "Materiales Disponibles",
+    "subtitle": "Amplia gama de compuestos de caucho y plásticos de ingeniería para diversos requisitos de aplicación.",
+    "rubberCompounds": "Compuestos de Caucho",
+    "engineeringPlastics": "Plásticos de Ingeniería",
+    "rubberDescription": "Nuestros compuestos de caucho son seleccionados por sus propiedades específicas de resistencia, rangos de temperatura e idoneidad de aplicación. Todos los materiales cumplen o exceden los estándares de la industria para aplicaciones de sellado.",
+    "plasticsDescription": "Termoplásticos de grado ingeniería fabricados mediante moldeo por inyección de precisión. Estos materiales proporcionan excelentes propiedades mecánicas, estabilidad dimensional y resistencia química para aplicaciones exigentes.",
+    "viewCatalog": "Ver Catálogo Completo",
+    "needCustom": "¿Necesita Componentes Personalizados?",
+    "customDescription": "Nuestro equipo está listo para discutir sus requerimientos y fabricar componentes según sus especificaciones exactas.",
+    "discussProject": "Discutir Su Proyecto"
+  },
+  "certifications": {
+    "title": "Certificaciones y Calidad",
+    "subtitle": "Procesos certificados y auditados por organismos internacionales de reconocimiento mundial.",
+    "iatfTitle": "IATF 16949:2016",
+    "iatfDescription": "Sistema de gestión de calidad automotriz certificado por DQS Alemania.",
+    "iatfValid": "Válido hasta 14 de julio de 2028",
+    "isoTitle": "ISO 9001:2015",
+    "isoDescription": "Sistema de gestión de calidad certificado para procesos de manufactura.",
+    "qualityTitle": "Herramientas de Calidad",
+    "qualityDescription": "Implementación de APQP, PPAP, SPC, FMEA y metodologías de mejora continua.",
+    "oemTitle": "Proveedor OEM/ORM Calificado",
+    "oemDescription": "Proveedor calificado para principales OEM automotrices con capacidades de trazabilidad completa."
+  },
+  "about": {
+    "title": "Acerca de MEFRUP",
+    "subtitle": "Fabricante líder de componentes automotrices de precisión con más de dos décadas de excelencia.",
+    "ourStory": "Nuestra Historia",
+    "storyText": "Fundada en 2003, MEFRUP Group LLC se ha establecido como un proveedor confiable de componentes de caucho vulcanizado y plástico de ingeniería de precisión para la industria automotriz. Con certificación IATF 16949:2016 y procesos auditados por DQS Alemania, ofrecemos calidad de nivel OEM con la agilidad de un socio de manufactura dedicado.",
+    "expertise": "Nuestra Experiencia",
+    "manufacturing": "Manufactura de Precisión",
+    "manufacturingText": "Instalaciones de última generación equipadas con maquinaria moderna para moldeo por inyección y vulcanización de caucho.",
+    "qualityControl": "Control de Calidad",
+    "qualityControlText": "Procesos rigoros
+
+os de inspección y pruebas en cada etapa de producción para garantizar la consistencia.",
+    "customSolutions": "Soluciones Personalizadas",
+    "customSolutionsText": "Capacidad de ingeniería para desarrollar y fabricar componentes según especificaciones exactas del cliente.",
+    "commitment": "Nuestro Compromiso",
+    "commitmentText": "Estamos comprometidos con la entrega de componentes de la más alta calidad que cumplen o exceden los estándares de la industria. Nuestro equipo trabaja en estrecha colaboración con los clientes para asegurar que cada proyecto se complete según especificaciones y a tiempo."
+  },
+  "contact": {
+    "title": "Solicitar Cotización",
+    "subtitle": "Envíenos sus requerimientos y responderemos en 24 horas con especificaciones técnicas y precios.",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "responseTime": "Tiempo de Respuesta",
+    "within24": "En 24 horas",
+    "name": "Nombre",
+    "company": "Empresa",
+    "projectDetails": "Detalles del Proyecto",
+    "projectPlaceholder": "Cuéntenos sobre sus requerimientos: tipo de material, dimensiones, cantidad, aplicación...",
+    "sendRequest": "Enviar Solicitud de Cotización",
+    "responseNote": "Responderemos con especificaciones técnicas y precios en 24 horas.",
+    "location": "Ubicación",
+    "locationText": "Instalación de manufactura que sirve a clientes en México y Estados Unidos.",
+    "whyChoose": "Por Qué Elegirnos",
+    "experience": "22+ años de experiencia",
+    "certified": "Certificado OEM/ORM",
+    "fastTurnaround": "Entrega rápida",
+    "customSolutions": "Soluciones personalizadas",
+    "iatfCertified": "IATF 16949:2016",
+    "dqsCertified": "Certificado por DQS Alemania",
+    "validUntil": "Válido hasta 14 de julio de 2028"
+  },
+  "products": {
+    "title": "Catálogo de Productos",
+    "subtitle": "Empaques de precisión para aplicaciones Tri-Clamp. Disponibles en múltiples materiales y tamaños para cumplir con sus especificaciones.",
+    "productSelector": "SELECTOR DE PRODUCTOS",
+    "findPerfect": "Encuentre Su Empaque Perfecto",
+    "selectorDescription": "Seleccione el tipo de empaque que coincida con los requisitos de su aplicación. Todas las dimensiones son aproximadas y cumplen con los estándares de la industria.",
+    "downloadCatalog": "Descargar Catálogo Completo",
+    "selectType": "Seleccionar Tipo de Empaque",
+    "standardType": "Tri-Clamp Estándar",
+    "standardDescription": "Solución de sellado básica para aplicaciones estándar",
+    "flangedType": "Tri-Clamp con Brida",
+    "flangedDescription": "Sellado mejorado con diseño de cordón integrado",
+    "envelopeType": "Sobre de Teflón",
+    "envelopeDescription": "Resistente a químicos con recubrimiento de PTFE",
+    "thickness": "Espesor",
+    "availableDimensions": "Dimensiones Disponibles",
+    "size": "Tamaño",
+    "innerDiameter": "Diámetro Interior (ID)",
+    "outerDiameter": "Diámetro Exterior (OD)",
+    "availableMaterials": "Materiales Disponibles",
+    "materialsTitle": "Materiales Disponibles",
+    "materialsSubtitle": "Ofrecemos una amplia gama de compuestos de caucho y plásticos de ingeniería para cumplir con sus requisitos específicos de aplicación.",
+    "rubberInfo": "Nuestros compuestos de caucho son seleccionados por sus propiedades específicas de resistencia, rangos de temperatura e idoneidad de aplicación. Todos los materiales cumplen o exceden los estándares de la industria para aplicaciones de sellado.",
+    "plasticsInfo": "Termoplásticos de grado ingeniería fabricados mediante moldeo por inyección de precisión. Estos materiales proporcionan excelentes propiedades mecánicas, estabilidad dimensional y resistencia química para aplicaciones exigentes.",
+    "needCustom": "¿Necesita una Solución Personalizada?",
+    "customDescription": "Fabricamos componentes según sus especificaciones exactas. Contáctenos para discutir sus requisitos de material y diseño.",
+    "requestCustomQuote": "Solicitar Cotización Personalizada"
+  },
+  "chatbot": {
+    "title": "Asistente MEFRUP",
+    "online": "En línea",
+    "typicallyReplies": "Responde típicamente al instante",
+    "typeMessage": "Escribe tu mensaje...",
+    "sendMessage": "Enviar mensaje",
+    "quickQuestions": "Preguntas rápidas:",
+    "requestQuote": "Solicitar cotización",
+    "certifications": "Nuestras certificaciones",
+    "servicesOffered": "Servicios ofrecidos",
+    "contactInfo": "Información de contacto"
+  },
+  "footer": {
+    "tagline": "Fabricante de Precisión de Componentes Automotrices",
+    "quickLinks": "Enlaces Rápidos",
+    "contact": "Contacto",
+    "followUs": "Síguenos",
+    "rights": "Todos los derechos reservados.",
+    "quality": "Calidad certificada IATF 16949:2016 | Auditado por DQS Alemania"
+  }
+}

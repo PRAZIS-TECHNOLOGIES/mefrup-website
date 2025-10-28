@@ -1,0 +1,186 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "services": "Services",
+    "certifications": "Certifications",
+    "about": "About",
+    "contact": "Contact",
+    "requestQuote": "Request Quote"
+  },
+  "hero": {
+    "certified": "IATF 16949:2016 Certified",
+    "title": "Precision Manufacturing of Automotive Components",
+    "subtitle": "OEM/ORM supplier specialized in vulcanized rubber and engineering plastic components. 22+ years of manufacturing excellence with DQS Germany audited processes.",
+    "yearsExperience": "Years Experience",
+    "certifiedQuality": "Certified Quality",
+    "oemSupplier": "OEM/ORM Supplier",
+    "getQuote": "Get Quote",
+    "viewProducts": "View Products"
+  },
+  "anniversary": {
+    "celebrating": "CELEBRATING",
+    "years": "22 YEARS",
+    "excellence": "of Manufacturing Excellence",
+    "tagline": "Where German Quality Meets Mexican Agility",
+    "stats": {
+      "years": "YEARS",
+      "yearsLabel": "Excellence",
+      "iatf": "IATF",
+      "iatfLabel": "16949:2016",
+      "iatfSublabel": "Certified",
+      "dqs": "DQS",
+      "dqsLabel": "GERMANY",
+      "dqsSublabel": "Audited",
+      "quality": "100%",
+      "qualityLabel": "OEM/ORM",
+      "qualitySublabel": "Quality"
+    }
+  },
+  "services": {
+    "title": "Products & Services",
+    "subtitle": "Precision components for automotive and industrial applications, backed by 22+ years of manufacturing experience and ISO-certified quality.",
+    "automotive": {
+      "title": "Automotive Sealing Systems",
+      "description": "Sealing components that meet OEM specifications for durability and performance in automotive applications.",
+      "features": ["Custom designs", "Weather-resistant materials", "OEM/ORM quality"]
+    },
+    "industrial": {
+      "title": "Industrial Components",
+      "description": "Vulcanized rubber and plastic parts for demanding industrial machinery and equipment.",
+      "features": ["Heavy-duty applications", "Long service life", "Custom specifications"]
+    },
+    "production": {
+      "title": "Critical Production Parts",
+      "description": "Reliable components manufactured to minimize downtime in production environments.",
+      "features": ["Fast replacement", "Consistent quality", "24/7 support available"]
+    },
+    "orm": {
+      "title": "ORM Replacement Parts",
+      "description": "Exact-fit replacement components as Original Replacement Manufacturer, specializing in rubber seals and gaskets.",
+      "features": ["Direct replacement", "Cost-effective", "Quick delivery"]
+    },
+    "oem": {
+      "title": "OEM Supply",
+      "description": "Direct supply to automotive OEMs with full quality management and traceability.",
+      "features": ["IATF 16949 certified", "Complete traceability", "Reliable quality"]
+    },
+    "prototyping": {
+      "title": "Prototyping & Development",
+      "description": "Fast prototyping and testing of new components with technical support.",
+      "features": ["Quick iterations", "Technical collaboration", "Pre-production validation"]
+    }
+  },
+  "materials": {
+    "title": "Available Materials",
+    "subtitle": "Comprehensive range of rubber compounds and engineering plastics for diverse application requirements.",
+    "rubberCompounds": "Rubber Compounds",
+    "engineeringPlastics": "Engineering Plastics",
+    "rubberDescription": "Our rubber compounds are selected for their specific resistance properties, temperature ranges, and application suitability. All materials meet or exceed industry standards for sealing applications.",
+    "plasticsDescription": "Engineering-grade thermoplastics manufactured through precision injection molding. These materials provide excellent mechanical properties, dimensional stability, and chemical resistance for demanding applications.",
+    "viewCatalog": "View Complete Product Catalog",
+    "needCustom": "Need Custom Components?",
+    "customDescription": "Our team is ready to discuss your requirements and manufacture components to your exact specifications.",
+    "discussProject": "Discuss Your Project"
+  },
+  "certifications": {
+    "title": "Certifications & Quality",
+    "subtitle": "Certified and audited processes by internationally recognized organizations.",
+    "iatfTitle": "IATF 16949:2016",
+    "iatfDescription": "Automotive quality management system certified by DQS Germany.",
+    "iatfValid": "Valid until July 14, 2028",
+    "isoTitle": "ISO 9001:2015",
+    "isoDescription": "Certified quality management system for manufacturing processes.",
+    "qualityTitle": "Quality Tools",
+    "qualityDescription": "Implementation of APQP, PPAP, SPC, FMEA, and continuous improvement methodologies.",
+    "oemTitle": "Qualified OEM/ORM Supplier",
+    "oemDescription": "Qualified supplier for major automotive OEMs with full traceability capabilities."
+  },
+  "about": {
+    "title": "About MEFRUP",
+    "subtitle": "Leading manufacturer of precision automotive components with over two decades of excellence.",
+    "ourStory": "Our Story",
+    "storyText": "Founded in 2003, MEFRUP Group LLC has established itself as a trusted supplier of precision vulcanized rubber and engineering plastic components for the automotive industry. With IATF 16949:2016 certification and DQS Germany audited processes, we deliver OEM-level quality with the agility of a dedicated manufacturing partner.",
+    "expertise": "Our Expertise",
+    "manufacturing": "Precision Manufacturing",
+    "manufacturingText": "State-of-the-art facilities equipped with modern machinery for injection molding and rubber vulcanization.",
+    "qualityControl": "Quality Control",
+    "qualityControlText": "Rigorous inspection and testing processes at every production stage to ensure consistency.",
+    "customSolutions": "Custom Solutions",
+    "customSolutionsText": "Engineering capability to develop and manufacture components to exact customer specifications.",
+    "commitment": "Our Commitment",
+    "commitmentText": "We are committed to delivering the highest quality components that meet or exceed industry standards. Our team works closely with customers to ensure every project is completed to specification and on time."
+  },
+  "contact": {
+    "title": "Get a Quote",
+    "subtitle": "Send us your requirements and we'll respond within 24 hours with technical specifications and pricing.",
+    "email": "Email",
+    "phone": "Phone",
+    "responseTime": "Response Time",
+    "within24": "Within 24 hours",
+    "name": "Name",
+    "company": "Company",
+    "projectDetails": "Project Details",
+    "projectPlaceholder": "Tell us about your requirements: material type, dimensions, quantity, application...",
+    "sendRequest": "Send Quote Request",
+    "responseNote": "We'll respond with technical specifications and pricing within 24 hours.",
+    "location": "Location",
+    "locationText": "Manufacturing facility serving customers across Mexico and the United States.",
+    "whyChoose": "Why Choose Us",
+    "experience": "22+ years experience",
+    "certified": "OEM/ORM certified",
+    "fastTurnaround": "Fast turnaround",
+    "customSolutions": "Custom solutions",
+    "iatfCertified": "IATF 16949:2016",
+    "dqsCertified": "DQS Germany Certified",
+    "validUntil": "Valid until July 14, 2028"
+  },
+  "products": {
+    "title": "Product Catalog",
+    "subtitle": "Precision-engineered gaskets for Tri-Clamp applications. Available in multiple materials and sizes to meet your specifications.",
+    "productSelector": "PRODUCT SELECTOR",
+    "findPerfect": "Find Your Perfect Gasket",
+    "selectorDescription": "Select the gasket type that matches your application requirements. All dimensions are approximate and meet industry standards.",
+    "downloadCatalog": "Download Full Catalog",
+    "selectType": "Select Gasket Type",
+    "standardType": "Standard Tri-Clamp",
+    "standardDescription": "Basic sealing solution for standard applications",
+    "flangedType": "Flanged Tri-Clamp",
+    "flangedDescription": "Enhanced sealing with integrated bead design",
+    "envelopeType": "Teflon Envelope",
+    "envelopeDescription": "Chemical-resistant with PTFE coating",
+    "thickness": "Thickness",
+    "availableDimensions": "Available Dimensions",
+    "size": "Size",
+    "innerDiameter": "Inner Diameter (ID)",
+    "outerDiameter": "Outer Diameter (OD)",
+    "availableMaterials": "Available Materials",
+    "materialsTitle": "Available Materials",
+    "materialsSubtitle": "We offer a comprehensive range of rubber compounds and engineering plastics to meet your specific application requirements.",
+    "rubberInfo": "Our rubber compounds are selected for their specific resistance properties, temperature ranges, and application suitability. All materials meet or exceed industry standards for sealing applications.",
+    "plasticsInfo": "Engineering-grade thermoplastics manufactured through precision injection molding. These materials provide excellent mechanical properties, dimensional stability, and chemical resistance for demanding applications.",
+    "needCustom": "Need a Custom Solution?",
+    "customDescription": "We manufacture components to your exact specifications. Contact us to discuss your material and design requirements.",
+    "requestCustomQuote": "Request Custom Quote"
+  },
+  "chatbot": {
+    "title": "MEFRUP Assistant",
+    "online": "Online",
+    "typicallyReplies": "Typically replies instantly",
+    "typeMessage": "Type your message...",
+    "sendMessage": "Send message",
+    "quickQuestions": "Quick questions:",
+    "requestQuote": "Request a quote",
+    "certifications": "Our certifications",
+    "servicesOffered": "Services offered",
+    "contactInfo": "Contact information"
+  },
+  "footer": {
+    "tagline": "Precision Manufacturer of Automotive Components",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved.",
+    "quality": "IATF 16949:2016 Certified Quality | Audited by DQS Germany"
+  }
+}

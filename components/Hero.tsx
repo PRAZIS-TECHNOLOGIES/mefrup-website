@@ -5,8 +5,10 @@ import { ArrowRight, Award, Factory, Globe } from 'lucide-react'
 import Link from 'next/link'
 import AnimatedCounter from './AnimatedCounter'
 import { useRef } from 'react'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Hero() {
+  const { t } = useLanguage()
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
       {/* Background Pattern */}
@@ -28,7 +30,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 bg-gray-100 text-primary px-4 py-2 rounded-full mb-6 font-medium text-sm border border-gray-200"
             >
               <Award className="w-4 h-4" />
-              IATF 16949:2016 Certified
+              {t?.hero?.certified || 'IATF 16949:2016 Certified'}
             </motion.div>
 
             <motion.h1
@@ -37,10 +39,7 @@ export default function Hero() {
               transition={{ delay: 0.6, duration: 0.7, type: "spring", stiffness: 90 }}
               className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 leading-[1.1] tracking-tight"
             >
-              Where{' '}
-              <span className="text-primary">German Quality</span>{' '}
-              Meets{' '}
-              <span className="text-primary">Mexican Agility</span>
+              {t?.hero?.title || 'Precision Manufacturing of Automotive Components'}
             </motion.h1>
 
             <motion.p
@@ -49,8 +48,7 @@ export default function Hero() {
               transition={{ delay: 0.8, duration: 0.6 }}
               className="text-xl text-secondary mb-8 max-w-2xl text-balance"
             >
-              Precision plastic and vulcanized rubber components for the automotive industry.
-              OEM/ORM certified supplier with 22+ years of experience and DQS Germany-audited processes.
+              {t?.hero?.subtitle || 'OEM/ORM supplier specialized in vulcanized rubber and engineering plastic components. 22+ years of manufacturing excellence with DQS Germany audited processes.'}
             </motion.p>
 
             <motion.div
@@ -63,14 +61,14 @@ export default function Hero() {
                 href="#contact"
                 className="group bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:shadow-lg shadow-md flex items-center justify-center gap-2 hover:scale-105"
               >
-                Request a Quote
+                {t?.hero?.getQuote || 'Get Quote'}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="#services"
                 className="bg-white hover:bg-gray-50 text-foreground border-2 border-gray-300 hover:border-primary px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-center gap-2 hover:scale-105"
               >
-                Explore Services
+                {t?.hero?.viewProducts || 'View Products'}
               </Link>
             </motion.div>
 
@@ -95,7 +93,7 @@ export default function Hero() {
                   duration={1500}
                   className="text-3xl font-bold text-primary"
                 />
-                <div className="text-sm text-secondary mt-1">Years Experience</div>
+                <div className="text-sm text-secondary mt-1">{t?.hero?.yearsExperience || 'Years Experience'}</div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -111,7 +109,7 @@ export default function Hero() {
                   duration={1500}
                   className="text-3xl font-bold text-primary"
                 />
-                <div className="text-sm text-secondary mt-1">OEM/ORM Quality</div>
+                <div className="text-sm text-secondary mt-1">{t?.hero?.oemSupplier || 'OEM/ORM Supplier'}</div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -121,7 +119,7 @@ export default function Hero() {
                 className="text-center lg:text-left"
               >
                 <div className="text-3xl font-bold text-primary">24/7</div>
-                <div className="text-sm text-secondary mt-1">Customer Support</div>
+                <div className="text-sm text-secondary mt-1">{t?.hero?.certifiedQuality || 'Certified Quality'}</div>
               </motion.div>
             </motion.div>
           </motion.div>

@@ -4,10 +4,13 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import LanguageSelector from './LanguageSelector'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,12 +21,12 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: 'Home', href: '/#home' },
-    { name: 'Products', href: '/products' },
-    { name: 'Services', href: '/#services' },
-    { name: 'Certifications', href: '/#certifications' },
-    { name: 'About', href: '/#about' },
-    { name: 'Contact', href: '/#contact' },
+    { name: t?.nav?.home || 'Home', href: '/#home' },
+    { name: t?.nav?.products || 'Products', href: '/products' },
+    { name: t?.nav?.services || 'Services', href: '/#services' },
+    { name: t?.nav?.certifications || 'Certifications', href: '/#certifications' },
+    { name: t?.nav?.about || 'About', href: '/#about' },
+    { name: t?.nav?.contact || 'Contact', href: '/#contact' },
   ]
 
   return (
@@ -59,6 +62,7 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
+            <LanguageSelector />
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -67,7 +71,7 @@ export default function Navbar() {
                 href="/#contact"
                 className="relative inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl overflow-hidden group"
               >
-                <span className="relative z-10">Request Quote</span>
+                <span className="relative z-10">{t?.nav?.requestQuote || 'Request Quote'}</span>
                 <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -110,12 +114,15 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
+              <div className="py-2">
+                <LanguageSelector />
+              </div>
               <Link
                 href="/#contact"
                 className="flex items-center justify-center gap-2 w-full text-center bg-primary hover:bg-primary-dark text-white px-6 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Request Quote
+                {t?.nav?.requestQuote || 'Request Quote'}
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

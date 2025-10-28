@@ -4,30 +4,32 @@ import { motion } from 'framer-motion'
 import { Download, CheckCircle, Search, Thermometer, Shield, Wrench } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Products() {
+  const { t } = useLanguage()
   const [selectedType, setSelectedType] = useState('standard')
   const [selectedMaterialCategory, setSelectedMaterialCategory] = useState('rubber')
 
   const gasketTypes = [
     {
       id: 'standard',
-      name: 'Standard Tri-Clamp',
-      description: 'Basic sealing solution for standard applications',
+      name: t?.products?.standardType || 'Standard Tri-Clamp',
+      description: t?.products?.standardDescription || 'Basic sealing solution for standard applications',
       thickness: '0.079"',
       materials: ['NBR', 'Neoprene', 'White Nitrile', 'EPDM', 'FKM (Viton)', 'Red Silicone', 'Translucent Silicone', 'White Silicone']
     },
     {
       id: 'flanged',
-      name: 'Flanged Tri-Clamp',
-      description: 'Enhanced sealing with integrated bead design',
+      name: t?.products?.flangedType || 'Flanged Tri-Clamp',
+      description: t?.products?.flangedDescription || 'Enhanced sealing with integrated bead design',
       thickness: 'Variable',
       materials: ['NBR', 'Neoprene', 'White Nitrile', 'EPDM', 'FKM (Viton)', 'Red Silicone', 'Translucent Silicone', 'White Silicone']
     },
     {
       id: 'envelope',
-      name: 'Teflon Envelope',
-      description: 'Chemical-resistant with PTFE coating',
+      name: t?.products?.envelopeType || 'Teflon Envelope',
+      description: t?.products?.envelopeDescription || 'Chemical-resistant with PTFE coating',
       thickness: '3/64"',
       materials: ['PTFE', 'NBR']
     }
@@ -178,11 +180,10 @@ export default function Products() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Product Catalog
+            {t?.products?.title || 'Product Catalog'}
           </h2>
           <p className="text-xl text-secondary max-w-3xl mx-auto">
-            Precision-engineered gaskets for Tri-Clamp applications.
-            Available in multiple materials and sizes to meet your specifications.
+            {t?.products?.subtitle || 'Precision-engineered gaskets for Tri-Clamp applications. Available in multiple materials and sizes to meet your specifications.'}
           </p>
         </motion.div>
 
@@ -199,14 +200,13 @@ export default function Products() {
             <div>
               <div className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center gap-2 mb-4 text-sm font-bold">
                 <Search className="w-4 h-4" />
-                PRODUCT SELECTOR
+                {t?.products?.productSelector || 'PRODUCT SELECTOR'}
               </div>
               <h3 className="text-3xl font-bold text-foreground mb-4">
-                Find Your Perfect Gasket
+                {t?.products?.findPerfect || 'Find Your Perfect Gasket'}
               </h3>
               <p className="text-secondary leading-relaxed mb-6">
-                Select the gasket type that matches your application requirements.
-                All dimensions are approximate and meet industry standards.
+                {t?.products?.selectorDescription || 'Select the gasket type that matches your application requirements. All dimensions are approximate and meet industry standards.'}
               </p>
               <a
                 href="/gasket.pdf"
@@ -214,7 +214,7 @@ export default function Products() {
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
               >
                 <Download className="w-5 h-5" />
-                Download Full Catalog
+                {t?.products?.downloadCatalog || 'Download Full Catalog'}
               </a>
             </div>
             <motion.div
@@ -244,7 +244,7 @@ export default function Products() {
           className="mb-12"
         >
           <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-            Select Gasket Type
+            {t?.products?.selectType || 'Select Gasket Type'}
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             {gasketTypes.map((type, index) => (
@@ -274,7 +274,7 @@ export default function Products() {
                   {type.description}
                 </p>
                 <div className={`text-xs font-mono ${selectedType === type.id ? 'text-accent' : 'text-primary'}`}>
-                  Thickness: {type.thickness}
+                  {t?.products?.thickness || 'Thickness'}: {type.thickness}
                 </div>
               </motion.button>
             ))}
@@ -290,7 +290,7 @@ export default function Products() {
           className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 mb-12"
         >
           <h3 className="text-2xl font-bold text-foreground mb-6">
-            {currentType.name} - Available Dimensions
+            {currentType.name} - {t?.products?.availableDimensions || 'Available Dimensions'}
           </h3>
 
           {/* Dimensions Table */}
@@ -298,9 +298,9 @@ export default function Products() {
             <table className="w-full">
               <thead>
                 <tr className="border-b-2 border-gray-200">
-                  <th className="text-left py-3 px-4 font-bold text-foreground">Size</th>
-                  <th className="text-left py-3 px-4 font-bold text-foreground">Inner Diameter (ID)</th>
-                  <th className="text-left py-3 px-4 font-bold text-foreground">Outer Diameter (OD)</th>
+                  <th className="text-left py-3 px-4 font-bold text-foreground">{t?.products?.size || 'Size'}</th>
+                  <th className="text-left py-3 px-4 font-bold text-foreground">{t?.products?.innerDiameter || 'Inner Diameter (ID)'}</th>
+                  <th className="text-left py-3 px-4 font-bold text-foreground">{t?.products?.outerDiameter || 'Outer Diameter (OD)'}</th>
                 </tr>
               </thead>
               <tbody>
@@ -324,7 +324,7 @@ export default function Products() {
 
           {/* Materials */}
           <div className="mt-8 pt-8 border-t border-gray-200">
-            <h4 className="text-lg font-bold text-foreground mb-4">Available Materials:</h4>
+            <h4 className="text-lg font-bold text-foreground mb-4">{t?.products?.availableMaterials || 'Available Materials'}:</h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {currentType.materials.map((material, index) => (
                 <motion.div
@@ -352,11 +352,10 @@ export default function Products() {
           className="mb-12"
         >
           <h3 className="text-3xl font-bold text-foreground mb-6 text-center">
-            Available Materials
+            {t?.products?.materialsTitle || 'Available Materials'}
           </h3>
           <p className="text-secondary text-center mb-8 max-w-3xl mx-auto">
-            We offer a comprehensive range of rubber compounds and engineering plastics
-            to meet your specific application requirements.
+            {t?.products?.materialsSubtitle || 'We offer a comprehensive range of rubber compounds and engineering plastics to meet your specific application requirements.'}
           </p>
 
           {/* Material Category Selector */}
@@ -372,7 +371,7 @@ export default function Products() {
               }`}
             >
               <Shield className="w-5 h-5" />
-              Rubber Compounds
+              {t?.materials?.rubberCompounds || 'Rubber Compounds'}
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -385,7 +384,7 @@ export default function Products() {
               }`}
             >
               <Wrench className="w-5 h-5" />
-              Engineering Plastics
+              {t?.materials?.engineeringPlastics || 'Engineering Plastics'}
             </motion.button>
           </div>
 
@@ -443,13 +442,13 @@ export default function Products() {
               <div>
                 <h4 className="font-bold text-foreground mb-2">
                   {selectedMaterialCategory === 'rubber'
-                    ? 'Rubber Compounds'
-                    : 'Engineering Plastics (Injection Molded)'}
+                    ? (t?.materials?.rubberCompounds || 'Rubber Compounds')
+                    : (t?.materials?.engineeringPlastics || 'Engineering Plastics (Injection Molded)')}
                 </h4>
                 <p className="text-secondary text-sm leading-relaxed">
                   {selectedMaterialCategory === 'rubber'
-                    ? 'Our rubber compounds are selected for their specific resistance properties, temperature ranges, and application suitability. All materials meet or exceed industry standards for sealing applications.'
-                    : 'Engineering-grade thermoplastics manufactured through precision injection molding. These materials provide excellent mechanical properties, dimensional stability, and chemical resistance for demanding applications.'}
+                    ? (t?.products?.rubberInfo || 'Our rubber compounds are selected for their specific resistance properties, temperature ranges, and application suitability. All materials meet or exceed industry standards for sealing applications.')
+                    : (t?.products?.plasticsInfo || 'Engineering-grade thermoplastics manufactured through precision injection molding. These materials provide excellent mechanical properties, dimensional stability, and chemical resistance for demanding applications.')}
                 </p>
               </div>
             </div>
@@ -464,16 +463,15 @@ export default function Products() {
           transition={{ duration: 0.6, delay: 1.1 }}
           className="text-center bg-primary text-white p-12 rounded-3xl shadow-lg border-2 border-primary-dark"
         >
-          <h3 className="text-3xl font-bold mb-4">Need a Custom Solution?</h3>
+          <h3 className="text-3xl font-bold mb-4">{t?.products?.needCustom || 'Need a Custom Solution?'}</h3>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            We manufacture components to your exact specifications.
-            Contact us to discuss your material and design requirements.
+            {t?.products?.customDescription || 'We manufacture components to your exact specifications. Contact us to discuss your material and design requirements.'}
           </p>
           <a
             href="#contact"
             className="inline-block bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
           >
-            Request Custom Quote
+            {t?.products?.requestCustomQuote || 'Request Custom Quote'}
           </a>
         </motion.div>
       </div>

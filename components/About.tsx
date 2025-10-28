@@ -3,28 +3,25 @@
 import { motion } from 'framer-motion'
 import { Target, Users, Lightbulb, Rocket } from 'lucide-react'
 import AnimatedCounter from './AnimatedCounter'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function About() {
+  const { t } = useLanguage()
   const values = [
     {
       icon: Target,
-      title: 'Precision Focus',
-      description: 'Manufacturing to tight tolerances with zero-defect production goals.',
+      title: t?.about?.manufacturing || 'Precision Manufacturing',
+      description: t?.about?.manufacturingText || 'State-of-the-art facilities equipped with modern machinery for injection molding and rubber vulcanization.',
     },
     {
       icon: Users,
-      title: 'Customer Partnership',
-      description: 'Working closely with customers to meet exact specifications and solve technical challenges.',
+      title: t?.about?.qualityControl || 'Quality Control',
+      description: t?.about?.qualityControlText || 'Rigorous inspection and testing processes at every production stage to ensure consistency.',
     },
     {
       icon: Lightbulb,
-      title: 'Continuous Improvement',
-      description: 'Ongoing investment in equipment, processes, and quality systems.',
-    },
-    {
-      icon: Rocket,
-      title: 'Fast Response',
-      description: 'Quick turnaround times enabled by our manufacturing location and logistics network.',
+      title: t?.about?.customSolutions || 'Custom Solutions',
+      description: t?.about?.customSolutionsText || 'Engineering capability to develop and manufacture components to exact customer specifications.',
     },
   ]
 
@@ -49,11 +46,10 @@ export default function About() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            About MEFRUP Group
+            {t?.about?.title || 'About MEFRUP'}
           </h2>
           <p className="text-xl text-secondary max-w-3xl mx-auto text-balance">
-            Over two decades manufacturing precision components for automotive and industrial OEMs,
-            delivering international quality standards from Mexico.
+            {t?.about?.subtitle || 'Leading manufacturer of precision automotive components with over two decades of excellence.'}
           </p>
         </motion.div>
 
@@ -67,33 +63,20 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-3xl font-bold text-foreground mb-6">
-              Our Story
+              {t?.about?.ourStory || 'Our Story'}
             </h3>
             <div className="space-y-4 text-secondary leading-relaxed">
               <p>
-                Founded in 2003, MEFRUP Group evolved from import replacement
-                to becoming a <strong className="text-foreground">certified OEM/ORM supplier</strong> for
-                international automotive manufacturers.
-              </p>
-              <p>
-                Our growth reflects consistent quality execution—from establishing national market
-                presence to achieving <strong className="text-foreground">IATF 16949:2016 certification</strong> through
-                DQS Germany audited processes.
-              </p>
-              <p>
-                Today we manufacture precision plastic and vulcanized rubber components
-                that meet the same standards demanded by leading automotive OEMs,
-                with the responsiveness of our Mexican manufacturing base.
+                {t?.about?.storyText || 'Founded in 2003, MEFRUP Group LLC has established itself as a trusted supplier of precision vulcanized rubber and engineering plastic components for the automotive industry. With IATF 16949:2016 certification and DQS Germany audited processes, we deliver OEM-level quality with the agility of a dedicated manufacturing partner.'}
               </p>
             </div>
 
             <div className="mt-8 p-6 bg-primary text-white rounded-xl shadow-lg relative overflow-hidden border-2 border-primary-dark">
               <h4 className="text-2xl font-bold mb-2">
-                Where German Quality Meets Mexican Agility
+                {t?.about?.commitment || 'Our Commitment'}
               </h4>
               <p>
-                International quality standards combined with efficient North American logistics—
-                delivering certified components with shorter lead times and better cost structure.
+                {t?.about?.commitmentText || 'We are committed to delivering the highest quality components that meet or exceed industry standards. Our team works closely with customers to ensure every project is completed to specification and on time.'}
               </p>
             </div>
           </motion.div>
@@ -106,7 +89,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-3xl font-bold text-foreground mb-6">
-              Our Core Values
+              {t?.about?.expertise || 'Our Expertise'}
             </h3>
             <div className="space-y-6">
               {values.map((value, index) => (

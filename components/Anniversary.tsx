@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion'
 import { Award, TrendingUp, Users, CheckCircle, Star, Trophy, Target, Zap } from 'lucide-react'
 import Image from 'next/image'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Anniversary() {
+  const { t } = useLanguage()
   const milestones = [
     {
       icon: Award,
@@ -33,10 +35,10 @@ export default function Anniversary() {
   ]
 
   const achievements = [
-    { icon: Target, value: '22', label: 'YEARS', sublabel: 'Excellence' },
-    { icon: Trophy, value: 'IATF', label: '16949:2016', sublabel: 'Certified' },
-    { icon: Award, value: 'DQS', label: 'GERMANY', sublabel: 'Audited' },
-    { icon: CheckCircle, value: '100%', label: 'OEM/ORM', sublabel: 'Quality' },
+    { icon: Target, value: t?.anniversary?.stats?.years || '22', label: t?.anniversary?.stats?.yearsLabel || 'YEARS', sublabel: t?.anniversary?.stats?.yearsLabel || 'Excellence' },
+    { icon: Trophy, value: t?.anniversary?.stats?.iatf || 'IATF', label: t?.anniversary?.stats?.iatfLabel || '16949:2016', sublabel: t?.anniversary?.stats?.iatfSublabel || 'Certified' },
+    { icon: Award, value: t?.anniversary?.stats?.dqs || 'DQS', label: t?.anniversary?.stats?.dqsLabel || 'GERMANY', sublabel: t?.anniversary?.stats?.dqsSublabel || 'Audited' },
+    { icon: CheckCircle, value: t?.anniversary?.stats?.quality || '100%', label: t?.anniversary?.stats?.qualityLabel || 'OEM/ORM', sublabel: t?.anniversary?.stats?.qualitySublabel || 'Quality' },
   ]
 
   return (
@@ -139,10 +141,10 @@ export default function Anniversary() {
                 className="absolute inset-0 bg-accent rounded-full blur-xl will-change-transform pointer-events-none"
                 style={{ transform: 'translateZ(0)' }}
               />
-              <div className="relative bg-gradient-to-br from-primary to-primary-dark px-12 py-6 rounded-full border-4 border-accent shadow-2xl will-change-transform"
+              <div className="relative bg-gradient-to-br from-primary to-primary-dark px-6 sm:px-12 py-4 sm:py-6 rounded-full border-2 sm:border-4 border-accent shadow-2xl will-change-transform"
                 style={{ transform: 'translateZ(0)' }}
               >
-                <div className="text-6xl font-black text-white tracking-wider">
+                <div className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-wider">
                   2003 - 2025
                 </div>
               </div>
@@ -156,15 +158,15 @@ export default function Anniversary() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h2 className="text-7xl md:text-9xl font-black text-white mb-6 leading-none tracking-tight">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-black text-white mb-6 leading-none tracking-tight">
               <motion.span
                 initial={{ x: -100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="block mb-4"
+                className="block mb-2 sm:mb-4"
               >
-                CELEBRATING
+                {t?.anniversary?.celebrating || 'CELEBRATING'}
               </motion.span>
               <motion.span
                 initial={{ scale: 0.3, opacity: 0 }}
@@ -176,7 +178,7 @@ export default function Anniversary() {
                   textShadow: '0 0 80px rgba(255, 214, 0, 0.5)'
                 }}
               >
-                22 YEARS
+                {t?.anniversary?.years || '22 YEARS'}
               </motion.span>
             </h2>
             <motion.p
@@ -184,9 +186,9 @@ export default function Anniversary() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.9, duration: 0.7 }}
-              className="text-3xl md:text-4xl text-gray-300 font-light tracking-wide mt-8"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-300 font-light tracking-wide mt-4 sm:mt-8"
             >
-              of Manufacturing Excellence
+              {t?.anniversary?.excellence || 'of Manufacturing Excellence'}
             </motion.p>
           </motion.div>
         </div>
@@ -300,18 +302,11 @@ export default function Anniversary() {
             />
 
             {/* Card - Optimized */}
-            <div className="relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg border-2 border-white/30 py-10 px-16 rounded-3xl shadow-2xl will-change-transform"
+            <div className="relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg border-2 border-white/30 py-6 sm:py-10 px-6 sm:px-16 rounded-3xl shadow-2xl will-change-transform"
               style={{ transform: 'translateZ(0)' }}
             >
-              <p className="text-3xl md:text-4xl font-black text-white tracking-wide leading-relaxed">
-                Where{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">
-                  German Quality
-                </span>
-                {' '}Meets{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-300">
-                  Mexican Agility
-                </span>
+              <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-black text-white tracking-wide leading-relaxed">
+                {t?.anniversary?.tagline || 'Where German Quality Meets Mexican Agility'}
               </p>
 
               {/* Decorative Lines */}

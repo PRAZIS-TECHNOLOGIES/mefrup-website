@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react'
 import { useState } from 'react'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Contact() {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,10 +32,10 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Get a Quote
+            {t?.contact?.title || 'Get a Quote'}
           </h2>
           <p className="text-xl text-secondary max-w-3xl mx-auto">
-            Send us your requirements and we'll respond within 24 hours with technical specifications and pricing.
+            {t?.contact?.subtitle || "Send us your requirements and we'll respond within 24 hours with technical specifications and pricing."}
           </p>
         </motion.div>
 
@@ -52,7 +54,7 @@ export default function Contact() {
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-secondary mb-1">Email</p>
+                  <p className="text-sm text-secondary mb-1">{t?.contact?.email || 'Email'}</p>
                   <a href="mailto:info@mefrup.com" className="font-bold text-foreground hover:text-primary transition-colors">
                     info@mefrup.com
                   </a>
@@ -66,7 +68,7 @@ export default function Contact() {
                   <Phone className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-secondary mb-1">Phone</p>
+                  <p className="text-sm text-secondary mb-1">{t?.contact?.phone || 'Phone'}</p>
                   <a href="tel:+52XXXXXXXXXX" className="font-bold text-foreground hover:text-primary transition-colors">
                     +52 (XXX) XXX-XXXX
                   </a>
@@ -80,9 +82,9 @@ export default function Contact() {
                   <Clock className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-secondary mb-1">Response Time</p>
+                  <p className="text-sm text-secondary mb-1">{t?.contact?.responseTime || 'Response Time'}</p>
                   <p className="font-bold text-foreground">
-                    Within 24 hours
+                    {t?.contact?.within24 || 'Within 24 hours'}
                   </p>
                 </div>
               </div>
@@ -101,7 +103,7 @@ export default function Contact() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-bold text-foreground mb-2">
-                    Name *
+                    {t?.contact?.name || 'Name'} *
                   </label>
                   <input
                     type="text"
@@ -116,7 +118,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-bold text-foreground mb-2">
-                    Email *
+                    {t?.contact?.email || 'Email'} *
                   </label>
                   <input
                     type="email"
@@ -132,7 +134,7 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="company" className="block text-sm font-bold text-foreground mb-2">
-                  Company
+                  {t?.contact?.company || 'Company'}
                 </label>
                 <input
                   type="text"
@@ -146,7 +148,7 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="message" className="block text-sm font-bold text-foreground mb-2">
-                  Project Details *
+                  {t?.contact?.projectDetails || 'Project Details'} *
                 </label>
                 <textarea
                   id="message"
@@ -155,7 +157,7 @@ export default function Contact() {
                   className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all duration-200 resize-none text-foreground"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Tell us about your requirements: material type, dimensions, quantity, application..."
+                  placeholder={t?.contact?.projectPlaceholder || 'Tell us about your requirements: material type, dimensions, quantity, application...'}
                 />
               </div>
 
@@ -166,11 +168,11 @@ export default function Contact() {
                 className="w-full bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
               >
                 <Send className="w-5 h-5" />
-                Send Quote Request
+                {t?.contact?.sendRequest || 'Send Quote Request'}
               </motion.button>
 
               <p className="text-sm text-secondary text-center">
-                We'll respond with technical specifications and pricing within 24 hours.
+                {t?.contact?.responseNote || "We'll respond with technical specifications and pricing within 24 hours."}
               </p>
             </form>
           </motion.div>
@@ -186,13 +188,13 @@ export default function Contact() {
             {/* Certification Badge */}
             <div className="bg-primary text-white p-6 rounded-xl shadow-lg">
               <h4 className="text-lg font-bold mb-2">
-                IATF 16949:2016
+                {t?.contact?.iatfCertified || 'IATF 16949:2016'}
               </h4>
               <p className="text-sm opacity-90 mb-1">
-                DQS Germany Certified
+                {t?.contact?.dqsCertified || 'DQS Germany Certified'}
               </p>
               <p className="text-xs opacity-75">
-                Valid until July 14, 2028
+                {t?.contact?.validUntil || 'Valid until July 14, 2028'}
               </p>
             </div>
 
@@ -203,34 +205,34 @@ export default function Contact() {
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground mb-1">Location</h4>
+                  <h4 className="font-bold text-foreground mb-1">{t?.contact?.location || 'Location'}</h4>
                   <p className="text-sm text-secondary">Mexico</p>
                 </div>
               </div>
               <p className="text-sm text-secondary">
-                Manufacturing facility serving customers across Mexico and the United States.
+                {t?.contact?.locationText || 'Manufacturing facility serving customers across Mexico and the United States.'}
               </p>
             </div>
 
             {/* Quick Facts */}
             <div className="bg-white p-6 rounded-xl border-2 border-gray-200">
-              <h4 className="font-bold text-foreground mb-4">Why Choose Us</h4>
+              <h4 className="font-bold text-foreground mb-4">{t?.contact?.whyChoose || 'Why Choose Us'}</h4>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5"></div>
-                  <span className="text-secondary">22+ years experience</span>
+                  <span className="text-secondary">{t?.contact?.experience || '22+ years experience'}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5"></div>
-                  <span className="text-secondary">OEM/ORM certified</span>
+                  <span className="text-secondary">{t?.contact?.certified || 'OEM/ORM certified'}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5"></div>
-                  <span className="text-secondary">Fast turnaround</span>
+                  <span className="text-secondary">{t?.contact?.fastTurnaround || 'Fast turnaround'}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5"></div>
-                  <span className="text-secondary">Custom solutions</span>
+                  <span className="text-secondary">{t?.contact?.customSolutions || 'Custom solutions'}</span>
                 </li>
               </ul>
             </div>

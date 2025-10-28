@@ -2,19 +2,22 @@
 
 import { motion } from 'framer-motion'
 import { Award, CheckCircle, Shield, TrendingUp } from 'lucide-react'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Certifications() {
+  const { t } = useLanguage()
+
   const certifications = [
     {
-      title: 'IATF 16949:2016',
-      description: 'Automotive quality management system certification',
-      validUntil: 'July 14, 2028',
+      title: t?.certifications?.iatfTitle || 'IATF 16949:2016',
+      description: t?.certifications?.iatfDescription || 'Automotive quality management system certified by DQS Germany.',
+      validUntil: t?.certifications?.iatfValid || 'Valid until July 14, 2028',
       icon: Shield,
       color: 'bg-red-100 text-primary',
     },
     {
-      title: 'ISO 9001:2018',
-      description: 'Quality management system standard',
+      title: t?.certifications?.isoTitle || 'ISO 9001:2015',
+      description: t?.certifications?.isoDescription || 'Certified quality management system for manufacturing processes.',
       validUntil: 'Current',
       icon: Award,
       color: 'bg-yellow-100 text-yellow-700',
@@ -67,11 +70,10 @@ export default function Certifications() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Certifications & Quality
+            {t?.certifications?.title || 'Certifications & Quality'}
           </h2>
           <p className="text-xl text-secondary max-w-3xl mx-auto text-balance">
-            International certifications and quality management systems
-            validated through regular audits.
+            {t?.certifications?.subtitle || 'Certified and audited processes by internationally recognized organizations.'}
           </p>
         </motion.div>
 
@@ -122,7 +124,7 @@ export default function Certifications() {
                   transition={{ delay: index * 0.15 + 0.3, duration: 0.5 }}
                 >
                   <CheckCircle className="w-5 h-5" />
-                  Valid until {cert.validUntil}
+                  {cert.validUntil}
                 </motion.div>
               </div>
             </motion.div>
