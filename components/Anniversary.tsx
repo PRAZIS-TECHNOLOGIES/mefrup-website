@@ -158,13 +158,13 @@ export default function Anniversary() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-black text-white mb-4 sm:mb-6 leading-none tracking-tight break-words" style={{ hyphens: 'auto' }}>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-black text-white mb-4 sm:mb-6 leading-none tracking-tight break-words px-2" style={{ hyphens: 'auto' }}>
               <motion.span
                 initial={{ x: -100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="block mb-2 sm:mb-4"
+                className="block mb-2 sm:mb-4 text-2xl sm:text-5xl md:text-6xl"
               >
                 {t?.anniversary?.celebrating || 'CELEBRATING'}
               </motion.span>
@@ -173,10 +173,11 @@ export default function Anniversary() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.7, duration: 0.9, type: "spring", stiffness: 80 }}
-                className="block text-transparent bg-clip-text bg-gradient-to-r from-accent via-yellow-300 to-accent break-words"
+                className="block text-transparent bg-clip-text bg-gradient-to-r from-accent via-yellow-300 to-accent break-words text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
                 style={{
                   textShadow: '0 0 80px rgba(255, 214, 0, 0.5)',
-                  hyphens: 'auto'
+                  hyphens: 'auto',
+                  wordBreak: 'break-word'
                 }}
               >
                 {t?.anniversary?.years || '22 YEARS'}

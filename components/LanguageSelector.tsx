@@ -58,7 +58,7 @@ export default function LanguageSelector() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-2xl border-2 border-gray-200 overflow-hidden z-50"
+              className="absolute right-0 sm:right-0 left-0 sm:left-auto mt-2 w-full sm:w-48 bg-white rounded-xl shadow-2xl border-2 border-gray-200 overflow-hidden z-50 max-h-[280px] overflow-y-auto"
             >
               {languages.map((lang, index) => (
                 <motion.button
