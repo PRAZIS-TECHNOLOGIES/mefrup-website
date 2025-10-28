@@ -97,33 +97,33 @@ export default function Anniversary() {
         style={{ transform: 'translateZ(0)' }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20">
         {/* Logo Section */}
         <motion.div
           initial={{ y: -30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-16"
         >
           <Image
             src="/logomefrup.png"
             alt="MEFRUP"
-            width={200}
-            height={67}
-            className="mx-auto mb-8 drop-shadow-2xl"
+            width={150}
+            height={50}
+            className="mx-auto mb-4 sm:mb-8 drop-shadow-2xl w-32 sm:w-40 md:w-48 h-auto"
           />
         </motion.div>
 
         {/* Hero Section */}
-        <div className="text-center mb-24">
+        <div className="text-center mb-12 sm:mb-24">
           {/* Year Badge */}
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
             whileInView={{ scale: 1, rotate: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
-            className="inline-block mb-12"
+            className="inline-block mb-6 sm:mb-12"
           >
             <div className="relative">
               <motion.div
@@ -141,10 +141,10 @@ export default function Anniversary() {
                 className="absolute inset-0 bg-accent rounded-full blur-xl will-change-transform pointer-events-none"
                 style={{ transform: 'translateZ(0)' }}
               />
-              <div className="relative bg-gradient-to-br from-primary to-primary-dark px-6 sm:px-12 py-4 sm:py-6 rounded-full border-2 sm:border-4 border-accent shadow-2xl will-change-transform"
+              <div className="relative bg-gradient-to-br from-primary to-primary-dark px-4 sm:px-8 md:px-12 py-2 sm:py-4 md:py-6 rounded-full border-2 sm:border-4 border-accent shadow-2xl will-change-transform"
                 style={{ transform: 'translateZ(0)' }}
               >
-                <div className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-wider">
+                <div className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-wide sm:tracking-wider whitespace-nowrap">
                   2003 - 2025
                 </div>
               </div>
@@ -158,7 +158,7 @@ export default function Anniversary() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-black text-white mb-6 leading-none tracking-tight">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-black text-white mb-4 sm:mb-6 leading-none tracking-tight">
               <motion.span
                 initial={{ x: -100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -186,7 +186,7 @@ export default function Anniversary() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.9, duration: 0.7 }}
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-300 font-light tracking-wide mt-4 sm:mt-8"
+              className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-300 font-light tracking-wide mt-2 sm:mt-4 md:mt-8 px-4"
             >
               {t?.anniversary?.excellence || 'of Manufacturing Excellence'}
             </motion.p>
@@ -199,7 +199,7 @@ export default function Anniversary() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-12 sm:mb-24 px-2"
         >
           {achievements.map((achievement, index) => (
             <motion.div
