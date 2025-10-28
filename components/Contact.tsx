@@ -14,34 +14,35 @@ export default function Contact() {
     message: '',
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setIsSubmitting(true)
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/ventas@mefrup.com', {
+      const response = await fetch('/api/send-quote', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
         },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          message: formData.message,
-          _subject: `New Quote Request from ${formData.name}`,
-          _template: 'table',
-        })
+        body: JSON.stringify(formData)
       })
+
+      const data = await response.json()
 
       if (response.ok) {
         alert('Thank you! We will contact you within 24 hours.')
         setFormData({ name: '', email: '', company: '', message: '' })
       } else {
+        console.error('Error:', data)
         alert('There was an error sending your request. Please try again.')
       }
     } catch (error) {
+      console.error('Error:', error)
       alert('There was an error sending your request. Please try again.')
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -160,12 +161,25 @@ export default function Contact() {
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
+                disabled={isSubmitting}
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                className="w-full bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                <Send className="w-5 h-5" />
-                {t?.contact?.sendRequest || 'Send Quote Request'}
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    {t?.contact?.sendRequest || 'Send Quote Request'}
+                  </>
+                )}
               </motion.button>
 
               <p className="text-sm text-secondary text-center">
