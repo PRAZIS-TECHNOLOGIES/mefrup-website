@@ -1,13 +1,20 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Car, Settings, Package, Shield, Cog, Zap } from 'lucide-react'
+import { Car, Settings, Package, Shield, Cog, Zap, LucideIcon } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+
+interface Service {
+  icon: LucideIcon
+  title: string
+  description: string
+  features: string[]
+}
 
 export default function Services() {
   const { t } = useLanguage()
 
-  const services = [
+  const services: Service[] = [
     {
       icon: Car,
       title: t?.services?.automotive?.title || 'Automotive Sealing Systems',
