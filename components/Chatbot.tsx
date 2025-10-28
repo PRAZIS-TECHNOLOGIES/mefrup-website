@@ -49,11 +49,11 @@ export default function Chatbot() {
     }
 
     if (lowerMessage.includes('certif')) {
-      return 'MEFRUP is IATF 16949:2016 certified (valid until July 14, 2028) and ISO 9001:2018 certified. Audited by DQS Germany. We are a qualified OEM/ORM supplier with 22+ years of experience.'
+      return 'MEFRUP is IATF 16949:2016 certified (valid until July 14, 2028) and ISO 9001:2018 certified. Audited by DQS Germany. We are a qualified OEM/MRO supplier with 22+ years of experience.'
     }
 
     if (lowerMessage.includes('service') || lowerMessage.includes('product')) {
-      return 'We manufacture precision plastic and vulcanized rubber components: automotive sealing systems, industrial parts, critical production components, and OEM/ORM replacement parts. All to OEM specifications.'
+      return 'We manufacture precision plastic and vulcanized rubber components: automotive sealing systems, industrial parts, critical production components, and OEM/MRO replacement parts. All to OEM specifications.'
     }
 
     if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('phone')) {
@@ -65,7 +65,7 @@ export default function Chatbot() {
     }
 
     if (lowerMessage.includes('quality') || lowerMessage.includes('standard')) {
-      return 'IATF 16949:2016 and ISO 9001:2018 certified with DQS Germany audited processes. We use APQP, PPAP, SPC, and FMEA quality tools. Qualified OEM/ORM supplier specializing in rubber and plastic components.'
+      return 'IATF 16949:2016 and ISO 9001:2018 certified with DQS Germany audited processes. We use APQP, PPAP, SPC, and FMEA quality tools. Qualified OEM/MRO supplier specializing in rubber and plastic components.'
     }
 
     if (lowerMessage.includes('hello') || lowerMessage.includes('hi')) {

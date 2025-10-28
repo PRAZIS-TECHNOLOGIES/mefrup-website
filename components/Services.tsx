@@ -35,9 +35,9 @@ export default function Services() {
     },
     {
       icon: Package,
-      title: t?.services?.orm?.title || 'ORM Replacement Parts',
-      description: t?.services?.orm?.description || 'Exact-fit replacement components as Original Replacement Manufacturer, specializing in rubber seals and gaskets.',
-      features: t?.services?.orm?.features || ['Direct replacement', 'Cost-effective', 'Quick delivery'],
+      title: t?.services?.mro?.title || 'MRO Replacement Parts',
+      description: t?.services?.mro?.description || 'Exact-fit replacement components for Maintenance, Repair, and Operations, specializing in rubber seals and gaskets.',
+      features: t?.services?.mro?.features || ['Direct replacement', 'Cost-effective', 'Quick delivery'],
     },
     {
       icon: Shield,

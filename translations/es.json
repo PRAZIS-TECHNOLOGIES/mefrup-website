@@ -11,10 +11,10 @@
   "hero": {
     "certified": "Certificado IATF 16949:2016",
     "title": "Manufactura de Precisión en Componentes Automotrices",
-    "subtitle": "Proveedor OEM/ORM especializado en componentes de caucho vulcanizado y plástico de ingeniería. Más de 22 años de excelencia en manufactura con procesos auditados por DQS Alemania.",
+    "subtitle": "Proveedor OEM/MRO especializado en componentes de caucho vulcanizado y plástico de ingeniería. Más de 22 años de excelencia en manufactura con procesos auditados por DQS Alemania.",
     "yearsExperience": "Años de Experiencia",
     "certifiedQuality": "Calidad Certificada",
-    "oemSupplier": "Proveedor OEM/ORM",
+    "oemSupplier": "Proveedor OEM/MRO",
     "getQuote": "Solicitar Cotización",
     "viewProducts": "Ver Productos"
   },
@@ -33,7 +33,7 @@
       "dqsLabel": "ALEMANIA",
       "dqsSublabel": "Auditado",
       "quality": "100%",
-      "qualityLabel": "OEM/ORM",
+      "qualityLabel": "OEM/MRO",
       "qualitySublabel": "Calidad"
     }
   },
@@ -43,7 +43,7 @@
     "automotive": {
       "title": "Sistemas de Sellado Automotriz",
       "description": "Componentes de sellado que cumplen con especificaciones OEM para durabilidad y desempeño en aplicaciones automotrices.",
-      "features": ["Diseños personalizados", "Materiales resistentes al clima", "Calidad OEM/ORM"]
+      "features": ["Diseños personalizados", "Materiales resistentes al clima", "Calidad OEM/MRO"]
     },
     "industrial": {
       "title": "Componentes Industriales",
@@ -55,9 +55,9 @@
       "description": "Componentes confiables manufacturados para minimizar el tiempo de inactividad en ambientes de producción.",
       "features": ["Reemplazo rápido", "Calidad consistente", "Soporte 24/7 disponible"]
     },
-    "orm": {
-      "title": "Piezas de Reemplazo ORM",
-      "description": "Componentes de ajuste exacto como Fabricante de Reemplazo Original, especializados en sellos y empaques de caucho.",
+    "mro": {
+      "title": "Piezas de Reemplazo MRO",
+      "description": "Componentes de ajuste exacto para Mantenimiento, Reparación y Operaciones, especializados en sellos y empaques de caucho.",
       "features": ["Reemplazo directo", "Económico", "Entrega rápida"]
     },
     "oem": {
@@ -93,7 +93,7 @@
     "isoDescription": "Sistema de gestión de calidad certificado para procesos de manufactura.",
     "qualityTitle": "Herramientas de Calidad",
     "qualityDescription": "Implementación de APQP, PPAP, SPC, FMEA y metodologías de mejora continua.",
-    "oemTitle": "Proveedor OEM/ORM Calificado",
+    "oemTitle": "Proveedor OEM/MRO Calificado",
     "oemDescription": "Proveedor calificado para principales OEM automotrices con capacidades de trazabilidad completa."
   },
   "about": {
@@ -128,7 +128,7 @@
     "locationText": "Instalación de manufactura que sirve a clientes en México y Estados Unidos.",
     "whyChoose": "Por Qué Elegirnos",
     "experience": "22+ años de experiencia",
-    "certified": "Certificado OEM/ORM",
+    "certified": "Certificado OEM/MRO",
     "fastTurnaround": "Entrega rápida",
     "customSolutions": "Soluciones personalizadas",
     "iatfCertified": "IATF 16949:2016",

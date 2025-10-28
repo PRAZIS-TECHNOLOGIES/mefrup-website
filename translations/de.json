@@ -11,10 +11,10 @@
   "hero": {
     "certified": "IATF 16949:2016 Zertifiziert",
     "title": "Präzisionsfertigung von Automobilkomponenten",
-    "subtitle": "OEM/ORM-Lieferant spezialisiert auf vulkanisierte Gummi- und technische Kunststoffkomponenten. Über 22 Jahre Fertigungsexzellenz mit DQS Deutschland-geprüften Prozessen.",
+    "subtitle": "OEM/MRO-Lieferant spezialisiert auf vulkanisierte Gummi- und technische Kunststoffkomponenten. Über 22 Jahre Fertigungsexzellenz mit DQS Deutschland-geprüften Prozessen.",
     "yearsExperience": "Jahre Erfahrung",
     "certifiedQuality": "Zertifizierte Qualität",
-    "oemSupplier": "OEM/ORM-Lieferant",
+    "oemSupplier": "OEM/MRO-Lieferant",
     "getQuote": "Angebot anfordern",
     "viewProducts": "Produkte ansehen"
   },
@@ -33,7 +33,7 @@
       "dqsLabel": "DEUTSCHLAND",
       "dqsSublabel": "Auditiert",
       "quality": "100%",
-      "qualityLabel": "OEM/ORM",
+      "qualityLabel": "OEM/MRO",
       "qualitySublabel": "Qualität"
     }
   },
@@ -43,7 +43,7 @@
     "automotive": {
       "title": "Automobil-Dichtsysteme",
       "description": "Dichtungskomponenten, die OEM-Spezifikationen für Langlebigkeit und Leistung in Automobilanwendungen erfüllen.",
-      "features": ["Kundenspezifische Designs", "Wetterbeständige Materialien", "OEM/ORM-Qualität"]
+      "features": ["Kundenspezifische Designs", "Wetterbeständige Materialien", "OEM/MRO-Qualität"]
     },
     "industrial": {
       "title": "Industriekomponenten",
@@ -55,9 +55,9 @@
       "description": "Zuverlässige Komponenten zur Minimierung von Ausfallzeiten in Produktionsumgebungen.",
       "features": ["Schneller Ersatz", "Konstante Qualität", "24/7-Support verfügbar"]
     },
-    "orm": {
-      "title": "ORM-Ersatzteile",
-      "description": "Passgenau als Original-Ersatzteilhersteller, spezialisiert auf Gummidichtungen und -packungen.",
+    "mro": {
+      "title": "MRO-Ersatzteile",
+      "description": "Passgenau für Wartung, Reparatur und Betrieb, spezialisiert auf Gummidichtungen und -packungen.",
       "features": ["Direkter Ersatz", "Kosteneffizient", "Schnelle Lieferung"]
     },
     "oem": {
@@ -93,7 +93,7 @@
     "isoDescription": "Zertifiziertes Qualitätsmanagementsystem für Fertigungsprozesse.",
     "qualityTitle": "Qualitätswerkzeuge",
     "qualityDescription": "Implementierung von APQP, PPAP, SPC, FMEA und kontinuierlichen Verbesserungsmethoden.",
-    "oemTitle": "Qualifizierter OEM/ORM-Lieferant",
+    "oemTitle": "Qualifizierter OEM/MRO-Lieferant",
     "oemDescription": "Qualifizierter Lieferant für führende Automobil-OEMs mit vollständigen Rückverfolgbarkeitsfähigkeiten."
   },
   "about": {
@@ -128,7 +128,7 @@
     "locationText": "Fertigungsanlage mit Kunden in Mexiko und den Vereinigten Staaten.",
     "whyChoose": "Warum wir",
     "experience": "22+ Jahre Erfahrung",
-    "certified": "OEM/ORM-zertifiziert",
+    "certified": "OEM/MRO-zertifiziert",
     "fastTurnaround": "Schnelle Lieferung",
     "customSolutions": "Kundenspezifische Lösungen",
     "iatfCertified": "IATF 16949:2016",
