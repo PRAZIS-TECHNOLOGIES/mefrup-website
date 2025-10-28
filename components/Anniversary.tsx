@@ -158,7 +158,7 @@ export default function Anniversary() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-black text-white mb-4 sm:mb-6 leading-none tracking-tight">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-black text-white mb-4 sm:mb-6 leading-none tracking-tight break-words" style={{ hyphens: 'auto' }}>
               <motion.span
                 initial={{ x: -100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -173,9 +173,10 @@ export default function Anniversary() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.7, duration: 0.9, type: "spring", stiffness: 80 }}
-                className="block text-transparent bg-clip-text bg-gradient-to-r from-accent via-yellow-300 to-accent"
+                className="block text-transparent bg-clip-text bg-gradient-to-r from-accent via-yellow-300 to-accent break-words"
                 style={{
-                  textShadow: '0 0 80px rgba(255, 214, 0, 0.5)'
+                  textShadow: '0 0 80px rgba(255, 214, 0, 0.5)',
+                  hyphens: 'auto'
                 }}
               >
                 {t?.anniversary?.years || '22 YEARS'}
@@ -186,7 +187,8 @@ export default function Anniversary() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.9, duration: 0.7 }}
-              className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-300 font-light tracking-wide mt-2 sm:mt-4 md:mt-8 px-4"
+              className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-300 font-light tracking-wide mt-2 sm:mt-4 md:mt-8 px-4 break-words"
+              style={{ hyphens: 'auto' }}
             >
               {t?.anniversary?.excellence || 'of Manufacturing Excellence'}
             </motion.p>
@@ -305,7 +307,7 @@ export default function Anniversary() {
             <div className="relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg border-2 border-white/30 py-6 sm:py-10 px-6 sm:px-16 rounded-3xl shadow-2xl will-change-transform"
               style={{ transform: 'translateZ(0)' }}
             >
-              <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-black text-white tracking-wide leading-relaxed">
+              <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-black text-white tracking-wide leading-relaxed break-words text-balance" style={{ hyphens: 'auto' }}>
                 {t?.anniversary?.tagline || 'Where German Quality Meets Mexican Agility'}
               </p>
 

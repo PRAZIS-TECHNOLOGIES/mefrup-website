@@ -64,10 +64,10 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 break-words" style={{ hyphens: 'auto' }}>
             {t?.services?.title || 'Products & Services'}
           </h2>
-          <p className="text-xl text-secondary max-w-3xl mx-auto text-balance">
+          <p className="text-xl text-secondary max-w-3xl mx-auto text-balance break-words" style={{ hyphens: 'auto' }}>
             {t?.services?.subtitle || 'Precision components for automotive and industrial applications, backed by 22+ years of manufacturing experience and ISO-certified quality.'}
           </p>
         </motion.div>
@@ -94,19 +94,19 @@ export default function Services() {
                 <service.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
               </div>
 
-              <h3 className="text-xl font-bold text-foreground mb-3">
+              <h3 className="text-xl font-bold text-foreground mb-3 break-words" style={{ hyphens: 'auto' }}>
                 {service.title}
               </h3>
 
-              <p className="text-secondary mb-4 leading-relaxed">
+              <p className="text-secondary mb-4 leading-relaxed break-words" style={{ hyphens: 'auto' }}>
                 {service.description}
               </p>
 
               <ul className="space-y-2">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm text-secondary">
-                    <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                    {feature}
+                  <li key={feature} className="flex items-center gap-2 text-sm text-secondary break-words" style={{ hyphens: 'auto' }}>
+                    <div className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0"></div>
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>

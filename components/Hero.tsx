@@ -37,7 +37,8 @@ export default function Hero() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.7, type: "spring", stiffness: 90 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 leading-[1.1] tracking-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 leading-[1.1] tracking-tight break-words"
+              style={{ hyphens: 'auto', wordBreak: 'break-word' }}
             >
               {t?.hero?.title || 'Precision Manufacturing of Automotive Components'}
             </motion.h1>
@@ -46,7 +47,8 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="text-xl text-secondary mb-8 max-w-2xl text-balance"
+              className="text-xl text-secondary mb-8 max-w-2xl text-balance break-words"
+              style={{ hyphens: 'auto' }}
             >
               {t?.hero?.subtitle || 'OEM/ORM supplier specialized in vulcanized rubber and engineering plastic components. 22+ years of manufacturing excellence with DQS Germany audited processes.'}
             </motion.p>
