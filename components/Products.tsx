@@ -11,25 +11,20 @@ export default function Products() {
   const [selectedType, setSelectedType] = useState('standard')
   const [selectedMaterialCategory, setSelectedMaterialCategory] = useState('rubber')
 
-  const gasketTypes = [
+  // Static data - no dependencies on translations for core structure
+  const gasketTypesData = [
     {
       id: 'standard',
-      name: t?.products?.standardType || 'Standard Tri-Clamp',
-      description: t?.products?.standardDescription || 'Basic sealing solution for standard applications',
       thickness: '0.079"',
       materials: ['NBR', 'Neoprene', 'White Nitrile', 'EPDM', 'FKM (Viton)', 'Red Silicone', 'Translucent Silicone', 'White Silicone']
     },
     {
       id: 'flanged',
-      name: t?.products?.flangedType || 'Flanged Tri-Clamp',
-      description: t?.products?.flangedDescription || 'Enhanced sealing with integrated bead design',
       thickness: 'Variable',
       materials: ['NBR', 'Neoprene', 'White Nitrile', 'EPDM', 'FKM (Viton)', 'Red Silicone', 'Translucent Silicone', 'White Silicone']
     },
     {
       id: 'envelope',
-      name: t?.products?.envelopeType || 'Teflon Envelope',
-      description: t?.products?.envelopeDescription || 'Chemical-resistant with PTFE coating',
       thickness: '3/64"',
       materials: ['PTFE', 'NBR']
     }
@@ -165,7 +160,22 @@ export default function Products() {
     }
   ]
 
-  const currentType = gasketTypes.find(t => t.id === selectedType) || gasketTypes[0]
+  // Get translated names - safe for hydration
+  const getGasketTypeName = (id: string) => {
+    if (id === 'standard') return t?.products?.standardType || 'Standard Tri-Clamp'
+    if (id === 'flanged') return t?.products?.flangedType || 'Flanged Tri-Clamp'
+    if (id === 'envelope') return t?.products?.envelopeType || 'Teflon Envelope'
+    return ''
+  }
+
+  const getGasketTypeDescription = (id: string) => {
+    if (id === 'standard') return t?.products?.standardDescription || 'Basic sealing solution for standard applications'
+    if (id === 'flanged') return t?.products?.flangedDescription || 'Enhanced sealing with integrated bead design'
+    if (id === 'envelope') return t?.products?.envelopeDescription || 'Chemical-resistant with PTFE coating'
+    return ''
+  }
+
+  const currentType = gasketTypesData.find(type => type.id === selectedType) || gasketTypesData[0]
   const currentMaterials = selectedMaterialCategory === 'rubber' ? rubberMaterials : plasticMaterials
 
   return (
@@ -247,7 +257,7 @@ export default function Products() {
             {t?.products?.selectType || 'Select Gasket Type'}
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
-            {gasketTypes.map((type, index) => (
+            {gasketTypesData.map((type, index) => (
               <motion.button
                 key={type.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -264,14 +274,14 @@ export default function Products() {
               >
                 <div className="flex items-start justify-between mb-3">
                   <h4 className={`text-lg font-bold ${selectedType === type.id ? 'text-white' : 'text-foreground'}`}>
-                    {type.name}
+                    {getGasketTypeName(type.id)}
                   </h4>
                   {selectedType === type.id && (
                     <CheckCircle className="w-6 h-6 text-accent" />
                   )}
                 </div>
                 <p className={`text-sm mb-3 ${selectedType === type.id ? 'text-white/90' : 'text-secondary'}`}>
-                  {type.description}
+                  {getGasketTypeDescription(type.id)}
                 </p>
                 <div className={`text-xs font-mono ${selectedType === type.id ? 'text-accent' : 'text-primary'}`}>
                   {t?.products?.thickness || 'Thickness'}: {type.thickness}
@@ -290,7 +300,7 @@ export default function Products() {
           className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 mb-12"
         >
           <h3 className="text-2xl font-bold text-foreground mb-6">
-            {currentType.name} - {t?.products?.availableDimensions || 'Available Dimensions'}
+            {getGasketTypeName(currentType.id)} - {t?.products?.availableDimensions || 'Available Dimensions'}
           </h3>
 
           {/* Dimensions Table */}
