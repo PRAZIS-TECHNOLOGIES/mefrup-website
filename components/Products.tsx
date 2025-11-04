@@ -30,9 +30,23 @@ export default function Products() {
     }
   ]
 
-  const sizes = [
+  // Sizes for STANDARD Tri-Clamp gaskets
+  const standardSizes = [
     { dimension: '1/2"', id: '3/8"', od: '1"' },
     { dimension: '3/4"', id: '5/8"', od: '1"' },
+    { dimension: '1" A', id: '15/16"', od: '1 1/4"' },
+    { dimension: '1"', id: '7/8"', od: '2"' },
+    { dimension: '1 1/2"', id: '1 3/8"', od: '2"' },
+    { dimension: '2"', id: '1 7/8"', od: '2 1/2"' },
+    { dimension: '2 1/2"', id: '2 3/8"', od: '3"' },
+    { dimension: '3"', id: '2 7/8"', od: '3 1/2"' },
+    { dimension: '4"', id: '3 7/8"', od: '4 1/2"' },
+    { dimension: '5"', id: '4 3/4"', od: '5 1/2"' },
+    { dimension: '6"', id: '5 3/4"', od: '6 1/2"' },
+  ]
+
+  // Sizes for FLANGED Tri-Clamp gaskets
+  const flangedSizes = [
     { dimension: '1"', id: '7/8"', od: '2"' },
     { dimension: '1 1/2"', id: '1 3/8"', od: '2"' },
     { dimension: '2"', id: '1 7/8"', od: '2 1/2"' },
@@ -45,6 +59,33 @@ export default function Products() {
     { dimension: '10"', id: '9 11/16"', od: '10 1/2"' },
     { dimension: '12"', id: '11 11/16"', od: '12 1/2"' },
   ]
+
+  // Sizes for TEFLON ENVELOPE Tri-Clamp gaskets
+  const envelopeSizes = [
+    { dimension: '1/2"', id: '3/8"', od: '7/8"' },
+    { dimension: '3/4"', id: '5/8"', od: '7/8"' },
+    { dimension: '1"', id: '7/8"', od: '2"' },
+    { dimension: '1 1/2"', id: '1 3/8"', od: '2"' },
+    { dimension: '2"', id: '1 7/8"', od: '2 1/2"' },
+    { dimension: '2 1/2"', id: '2 3/8"', od: '3"' },
+    { dimension: '3"', id: '2 7/8"', od: '3 1/2"' },
+    { dimension: '4"', id: '3 7/8"', od: '4 1/2"' },
+    { dimension: '5"', id: '4 3/4"', od: '5 1/2"' },
+    { dimension: '6"', id: '5 3/4"', od: '6 1/2"' },
+    { dimension: '8"', id: '7 3/4"', od: '8 1/2"' },
+    { dimension: '10"', id: '9 11/16"', od: '10 1/2"' },
+    { dimension: '12"', id: '11 11/16"', od: '12 1/2"' },
+  ]
+
+  // Get the appropriate sizes array based on selected type
+  const getSizesForType = (typeId: string) => {
+    if (typeId === 'standard') return standardSizes
+    if (typeId === 'flanged') return flangedSizes
+    if (typeId === 'envelope') return envelopeSizes
+    return standardSizes
+  }
+
+  const sizes = getSizesForType(selectedType)
 
   const rubberMaterials = [
     {

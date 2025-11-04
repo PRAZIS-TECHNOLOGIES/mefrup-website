@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: '/logomefrup.png',
+    shortcut: '/logomefrup.png',
+    apple: '/logomefrup.png',
+  },
   openGraph: {
     title: "MEFRUP | Automotive Gaskets & Seals Manufacturer",
     description: "IATF 16949:2016 certified manufacturer of automotive gaskets and rubber components. OEM/ORM supplier serving Mexico & USA.",

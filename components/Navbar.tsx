@@ -21,13 +21,27 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: t?.nav?.home || 'Home', href: '/#home' },
-    { name: t?.nav?.products || 'Products', href: '/products' },
-    { name: t?.nav?.services || 'Services', href: '/#services' },
-    { name: t?.nav?.certifications || 'Certifications', href: '/#certifications' },
-    { name: t?.nav?.about || 'About', href: '/#about' },
-    { name: t?.nav?.contact || 'Contact', href: '/#contact' },
+    { name: t?.nav?.home || 'Home', href: '/#home', section: 'home' },
+    { name: t?.nav?.products || 'Products', href: '/products', section: null },
+    { name: t?.nav?.services || 'Services', href: '/#services', section: 'services' },
+    { name: t?.nav?.certifications || 'Certifications', href: '/#certifications', section: 'certifications' },
+    { name: t?.nav?.about || 'About', href: '/#about', section: 'about' },
+    { name: t?.nav?.contact || 'Contact', href: '/#contact', section: 'contact' },
   ]
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, section: string | null) => {
+    if (!section) return // Let normal navigation happen for products page
+
+    // Check if we're on the home page
+    if (window.location.pathname === '/') {
+      e.preventDefault()
+      const element = document.getElementById(section)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+    // If we're not on home page, let the Link component handle navigation
+  }
 
   return (
     <motion.nav
@@ -57,6 +71,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.section)}
                 className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.name}
@@ -69,6 +84,7 @@ export default function Navbar() {
             >
               <Link
                 href="/#contact"
+                onClick={(e) => handleNavClick(e, 'contact')}
                 className="relative inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl overflow-hidden group"
               >
                 <span className="relative z-10">{t?.nav?.requestQuote || 'Request Quote'}</span>
@@ -109,7 +125,10 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   className="block text-foreground hover:text-primary transition-colors duration-200 font-medium py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    handleNavClick(e, item.section)
+                    setIsMobileMenuOpen(false)
+                  }}
                 >
                   {item.name}
                 </Link>
@@ -117,7 +136,10 @@ export default function Navbar() {
               <Link
                 href="/#contact"
                 className="flex items-center justify-center gap-2 w-full text-center bg-primary hover:bg-primary-dark text-white px-6 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => {
+                  handleNavClick(e, 'contact')
+                  setIsMobileMenuOpen(false)
+                }}
               >
                 {t?.nav?.requestQuote || 'Request Quote'}
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

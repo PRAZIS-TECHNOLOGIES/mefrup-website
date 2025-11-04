@@ -18,12 +18,13 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Hello! How can I help you today?",
+      text: "Hello! I'm MEFRUP's assistant. How can I help you today?",
       sender: 'bot',
       timestamp: new Date(),
     },
   ])
   const [inputValue, setInputValue] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   const scrollToBottom = () => {
@@ -41,43 +42,45 @@ export default function Chatbot() {
     t?.chatbot?.contactInfo || 'Contact information',
   ]
 
-  const getBotResponse = (userMessage: string): string => {
-    const lowerMessage = userMessage.toLowerCase()
+  const getBotResponse = async (userMessage: string) => {
+    try {
+      // Build conversation history for context
+      const conversationHistory = messages.map(msg => ({
+        role: msg.sender === 'user' ? 'user' : 'assistant',
+        content: msg.text
+      }))
 
-    if (lowerMessage.includes('quote') || lowerMessage.includes('price')) {
-      return "For a quote, please email us at info@mefrup.com with your specifications, or use our contact form below. We'll respond within 24 hours."
+      // Add the new user message
+      conversationHistory.push({
+        role: 'user',
+        content: userMessage
+      })
+
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          messages: conversationHistory
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to get response')
+      }
+
+      const data = await response.json()
+      return data.message
+    } catch (error) {
+      console.error('Chat error:', error)
+      return "I'm having trouble connecting right now. Please email us at info@mefrup.com or use the contact form below, and our team will assist you."
     }
-
-    if (lowerMessage.includes('certif')) {
-      return 'MEFRUP is IATF 16949:2016 certified (valid until July 14, 2028) and ISO 9001:2018 certified. Audited by DQS Germany. We are a qualified OEM/MRO supplier with 22+ years of experience.'
-    }
-
-    if (lowerMessage.includes('service') || lowerMessage.includes('product')) {
-      return 'We manufacture precision plastic and vulcanized rubber components: automotive sealing systems, industrial parts, critical production components, and OEM/MRO replacement parts. All to OEM specifications.'
-    }
-
-    if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('phone')) {
-      return 'Email: info@mefrup.com or use the contact form below. We have 24/7 support available for production emergencies.'
-    }
-
-    if (lowerMessage.includes('location') || lowerMessage.includes('where')) {
-      return 'We manufacture in Mexico, serving customers across Mexico and the United States with fast delivery times and competitive pricing.'
-    }
-
-    if (lowerMessage.includes('quality') || lowerMessage.includes('standard')) {
-      return 'IATF 16949:2016 and ISO 9001:2018 certified with DQS Germany audited processes. We use APQP, PPAP, SPC, and FMEA quality tools. Qualified OEM/MRO supplier specializing in rubber and plastic components.'
-    }
-
-    if (lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
-      return 'Hello! How can I help you today?'
-    }
-
-    return "For detailed information, please email info@mefrup.com or use the contact form below. Our team will get back to you with specifics."
   }
 
-  const handleSendMessage = (text?: string) => {
+  const handleSendMessage = async (text?: string) => {
     const messageText = text || inputValue.trim()
-    if (!messageText) return
+    if (!messageText || isLoading) return
 
     const userMessage: Message = {
       id: Date.now(),
@@ -88,17 +91,29 @@ export default function Chatbot() {
 
     setMessages((prev) => [...prev, userMessage])
     setInputValue('')
+    setIsLoading(true)
 
-    // Simulate bot typing delay
-    setTimeout(() => {
+    try {
+      const botResponseText = await getBotResponse(messageText)
+
       const botMessage: Message = {
         id: Date.now() + 1,
-        text: getBotResponse(messageText),
+        text: botResponseText,
         sender: 'bot',
         timestamp: new Date(),
       }
       setMessages((prev) => [...prev, botMessage])
-    }, 1000)
+    } catch (error) {
+      const errorMessage: Message = {
+        id: Date.now() + 1,
+        text: "I'm having trouble connecting right now. Please email us at info@mefrup.com",
+        sender: 'bot',
+        timestamp: new Date(),
+      }
+      setMessages((prev) => [...prev, errorMessage])
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -181,7 +196,26 @@ export default function Chatbot() {
                         : 'bg-white text-foreground border border-gray-200'
                     }`}
                   >
-                    <p className="text-sm leading-relaxed">{message.text}</p>
+                    <div className="text-sm leading-relaxed">
+                      {message.text.split(/(\[Contact Us\]\(#contact\))/).map((part, index) => {
+                        if (part === '[Contact Us](#contact)') {
+                          return (
+                            <a
+                              key={index}
+                              href="#contact"
+                              onClick={() => setIsOpen(false)}
+                              className="inline-flex items-center gap-1 mt-2 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg font-bold transition-all duration-200 hover:shadow-lg text-xs"
+                            >
+                              Contact Us
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                              </svg>
+                            </a>
+                          )
+                        }
+                        return <span key={index}>{part}</span>
+                      })}
+                    </div>
                     <p
                       className={`text-xs mt-1 ${
                         message.sender === 'user' ? 'text-white/70' : 'text-gray-400'
@@ -195,6 +229,20 @@ export default function Chatbot() {
                   </div>
                 </div>
               ))}
+              {isLoading && (
+                <div className="flex justify-start">
+                  <div className="bg-white text-foreground border border-gray-200 rounded-2xl px-4 py-3">
+                    <div className="flex items-center gap-2">
+                      <div className="flex gap-1">
+                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                      </div>
+                      <span className="text-xs text-gray-400">MEFRUP is typing...</span>
+                    </div>
+                  </div>
+                </div>
+              )}
               <div ref={messagesEndRef} />
             </div>
 
@@ -224,12 +272,14 @@ export default function Chatbot() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder={t?.chatbot?.typeMessage || 'Type your message...'}
-                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-200"
+                  disabled={isLoading}
+                  placeholder={isLoading ? 'Waiting for response...' : (t?.chatbot?.typeMessage || 'Type your message...')}
+                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 />
                 <button
                   onClick={() => handleSendMessage()}
-                  className="bg-primary hover:bg-primary-dark text-white p-3 rounded-lg transition-all duration-200 hover:shadow-lg"
+                  disabled={isLoading}
+                  className="bg-primary hover:bg-primary-dark text-white p-3 rounded-lg transition-all duration-200 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   aria-label={t?.chatbot?.sendMessage || 'Send message'}
                 >
                   <Send className="w-5 h-5" />

@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail } from 'lucide-react'
+import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -48,12 +48,6 @@ export default function Footer() {
             <p className="text-gray-300 mb-6 leading-relaxed">
               {t?.footer?.tagline || 'Precision Manufacturer of Automotive Components'}
             </p>
-            <div className="flex items-center gap-2 text-sm text-gray-300 mb-4">
-              <Mail className="w-4 h-4" />
-              <a href="mailto:info@mefrup.com" className="hover:text-accent-dark transition-colors">
-                info@mefrup.com
-              </a>
-            </div>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a

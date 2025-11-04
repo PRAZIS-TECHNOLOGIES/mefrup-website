@@ -31,10 +31,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Load translations
-    if (mounted && language !== 'en') {
-      import(`@/translations/${language}.json`)
-        .then((module) => setTranslations(module.default))
-        .catch(() => setTranslations(enTranslations))
+    if (mounted) {
+      if (language === 'en') {
+        setTranslations(enTranslations)
+      } else {
+        import(`@/translations/${language}.json`)
+          .then((module) => setTranslations(module.default))
+          .catch(() => setTranslations(enTranslations))
+      }
     }
   }, [language, mounted])
 

@@ -54,42 +54,33 @@ export default function LanguageSelector() {
 
             {/* Dropdown */}
             <motion.div
-              initial={{ opacity: 0, y: -10, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-              className="absolute right-0 sm:right-0 left-0 sm:left-auto mt-2 w-full sm:w-48 bg-white rounded-xl shadow-2xl border-2 border-gray-200 z-[70]"
+              initial={{ opacity: 0, y: -5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+              className="absolute right-0 sm:right-0 left-0 sm:left-auto mt-2 w-full sm:w-48 bg-white rounded-xl shadow-2xl border-2 border-gray-200 z-[70] overflow-hidden"
             >
-              {languages.map((lang, index) => (
-                <motion.button
+              {languages.map((lang) => (
+                <button
                   key={lang.code}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
                   onClick={() => {
                     setLanguage(lang.code as 'en' | 'es' | 'de')
                     setIsOpen(false)
                   }}
-                  className={`w-full flex items-center justify-between px-4 py-3 sm:py-3 transition-all duration-200 ${
+                  className={`w-full flex items-center justify-between px-4 py-3 sm:py-3 transition-colors duration-150 ${
                     language === lang.code
                       ? 'bg-primary text-white'
                       : 'hover:bg-gray-50 text-foreground'
-                  }`}
+                  } ${lang.code === 'en' ? 'rounded-t-xl' : lang.code === 'de' ? 'rounded-b-xl' : ''}`}
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-xl">{lang.flag}</span>
                     <span className="font-medium">{lang.name}</span>
                   </div>
                   {language === lang.code && (
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                    >
-                      <Check className="w-5 h-5" />
-                    </motion.div>
+                    <Check className="w-5 h-5" />
                   )}
-                </motion.button>
+                </button>
               ))}
             </motion.div>
           </>
