@@ -240,27 +240,27 @@ export default function Anniversary() {
               />
 
               {/* Card - Optimized */}
-              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 group-hover:border-accent/50 transition-all duration-500 shadow-2xl will-change-transform"
+              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md p-3 sm:p-8 rounded-3xl border-2 border-white/20 group-hover:border-accent/50 transition-all duration-500 shadow-2xl will-change-transform overflow-hidden"
                 style={{ transform: 'translateZ(0)' }}
               >
-                <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <achievement.icon className="w-16 h-16 text-white" />
+                <div className="absolute top-2 sm:top-4 right-2 sm:right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <achievement.icon className="w-12 sm:w-16 h-12 sm:h-16 text-white" />
                 </div>
 
-                <div className="relative z-10">
-                  <div className="bg-accent/20 p-3 rounded-2xl w-fit mb-4 border border-accent/30">
-                    <achievement.icon className="w-8 h-8 text-accent" />
+                <div className="relative z-10 text-center sm:text-left px-1 sm:px-0">
+                  <div className="bg-accent/20 p-2 sm:p-3 rounded-2xl w-fit mb-2 sm:mb-4 border border-accent/30 mx-auto sm:mx-0">
+                    <achievement.icon className="w-5 sm:w-8 h-5 sm:h-8 text-accent" />
                   </div>
 
-                  <div className="text-5xl font-black text-white mb-2 tracking-tight">
+                  <div className="text-2xl sm:text-4xl md:text-5xl font-black text-white mb-1 sm:mb-2 tracking-tight leading-none">
                     {achievement.value}
                   </div>
 
-                  <div className="text-sm font-bold text-accent uppercase tracking-widest mb-1">
+                  <div className="text-[9px] sm:text-sm font-bold text-accent uppercase tracking-tight sm:tracking-widest mb-1 break-words leading-tight">
                     {achievement.label}
                   </div>
 
-                  <div className="text-xs text-gray-400 uppercase tracking-wider">
+                  <div className="text-[8px] sm:text-xs text-gray-400 uppercase tracking-normal sm:tracking-wider leading-tight">
                     {achievement.sublabel}
                   </div>
                 </div>
