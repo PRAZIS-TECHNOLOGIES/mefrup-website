@@ -81,7 +81,13 @@
     "viewCatalog": "View Complete Product Catalog",
     "needCustom": "Need Custom Components?",
     "customDescription": "Our team is ready to discuss your requirements and manufacture components to your exact specifications.",
-    "discussProject": "Discuss Your Project"
+    "discussProject": "Discuss Your Project",
+    "tempRanges": {
+      "standard": "Standard range",
+      "extreme": "Extreme range",
+      "highTemp": "High temp",
+      "enhanced": "Enhanced"
+    }
   },
   "certifications": {
     "title": "Certifications & Quality",
@@ -133,7 +139,19 @@
     "customSolutions": "Custom solutions",
     "iatfCertified": "IATF 16949:2016",
     "dqsCertified": "DQS Germany Certified",
-    "validUntil": "Valid until July 14, 2028"
+    "validUntil": "Valid until July 14, 2028",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "companyPlaceholder": "Your company name",
+    "sending": "Sending...",
+    "pleaseWait": "Please wait a moment and try again.",
+    "thankYou": "Thank you! We will contact you within 24 hours.",
+    "errorSending": "There was an error sending your request. Please try again.",
+    "recaptchaText": "This site is protected by reCAPTCHA and the Google",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "and": "and",
+    "apply": "apply."
   },
   "products": {
     "title": "Product Catalog",

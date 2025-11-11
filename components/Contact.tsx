@@ -26,7 +26,7 @@ export default function Contact() {
       // Get reCAPTCHA token
       if (!executeRecaptcha) {
         console.warn('reCAPTCHA not loaded yet')
-        alert('Please wait a moment and try again.')
+        alert(t?.contact?.pleaseWait || 'Please wait a moment and try again.')
         setIsSubmitting(false)
         return
       }
@@ -47,15 +47,15 @@ export default function Contact() {
       const data = await response.json()
 
       if (response.ok) {
-        alert('Thank you! We will contact you within 24 hours.')
+        alert(t?.contact?.thankYou || 'Thank you! We will contact you within 24 hours.')
         setFormData({ name: '', email: '', company: '', message: '' })
       } else {
         console.error('Error:', data)
-        alert('There was an error sending your request. Please try again.')
+        alert(t?.contact?.errorSending || 'There was an error sending your request. Please try again.')
       }
     } catch (error) {
       console.error('Error:', error)
-      alert('There was an error sending your request. Please try again.')
+      alert(t?.contact?.errorSending || 'There was an error sending your request. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -125,7 +125,7 @@ export default function Contact() {
                     className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all duration-200 text-foreground"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Your name"
+                    placeholder={t?.contact?.namePlaceholder || 'Your name'}
                   />
                 </div>
 
@@ -140,7 +140,7 @@ export default function Contact() {
                     className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all duration-200 text-foreground"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="your@email.com"
+                    placeholder={t?.contact?.emailPlaceholder || 'your@email.com'}
                   />
                 </div>
               </div>
@@ -155,7 +155,7 @@ export default function Contact() {
                   className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all duration-200 text-foreground"
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  placeholder="Your company name"
+                  placeholder={t?.contact?.companyPlaceholder || 'Your company name'}
                 />
               </div>
 
@@ -187,7 +187,7 @@ export default function Contact() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Sending...
+                    {t?.contact?.sending || 'Sending...'}
                   </>
                 ) : (
                   <>
@@ -202,15 +202,15 @@ export default function Contact() {
               </p>
 
               <p className="text-xs text-gray-400 text-center mt-4">
-                This site is protected by reCAPTCHA and the Google{' '}
+                {t?.contact?.recaptchaText || 'This site is protected by reCAPTCHA and the Google'}{' '}
                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">
-                  Privacy Policy
+                  {t?.contact?.privacyPolicy || 'Privacy Policy'}
                 </a>{' '}
-                and{' '}
+                {t?.contact?.and || 'and'}{' '}
                 <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">
-                  Terms of Service
+                  {t?.contact?.termsOfService || 'Terms of Service'}
                 </a>{' '}
-                apply.
+                {t?.contact?.apply || 'apply.'}
               </p>
             </form>
           </motion.div>

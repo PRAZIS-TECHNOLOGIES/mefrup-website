@@ -116,13 +116,13 @@ export default function Products() {
       code: 'CR',
       name: 'Neoprene/Chloroprene',
       properties: 'Balanced properties for general purpose applications',
-      tempRange: 'Standard range'
+      tempRange: t?.materials?.tempRanges?.standard || 'Standard range'
     },
     {
       code: 'FFKM',
       name: 'Perfluoroelastomer',
       properties: 'Ultimate chemical resistance for extreme applications',
-      tempRange: 'Extreme range'
+      tempRange: t?.materials?.tempRanges?.extreme || 'Extreme range'
     }
   ]
 
@@ -143,13 +143,13 @@ export default function Products() {
       code: 'PA6.6-GF30',
       name: 'Glass Filled Nylon',
       properties: '30% glass fiber reinforcement for superior strength',
-      tempRange: 'Enhanced'
+      tempRange: t?.materials?.tempRanges?.enhanced || 'Enhanced'
     },
     {
       code: 'POM',
       name: 'Polyoxymethylene/Acetal',
       properties: 'Excellent dimensional stability, low friction, chemical resistance',
-      tempRange: 'Standard'
+      tempRange: t?.materials?.tempRanges?.standard || 'Standard'
     },
     {
       code: 'PC',
@@ -161,25 +161,25 @@ export default function Products() {
       code: 'ABS',
       name: 'Acrylonitrile Butadiene Styrene',
       properties: 'Good balance of strength, toughness, and processability',
-      tempRange: 'Standard'
+      tempRange: t?.materials?.tempRanges?.standard || 'Standard'
     },
     {
       code: 'PP',
       name: 'Polypropylene',
       properties: 'Chemical resistance, low density, cost-effective',
-      tempRange: 'Standard'
+      tempRange: t?.materials?.tempRanges?.standard || 'Standard'
     },
     {
       code: 'PE-UHMW',
       name: 'Ultra High Molecular Weight Polyethylene',
       properties: 'Exceptional wear resistance, self-lubricating',
-      tempRange: 'Standard'
+      tempRange: t?.materials?.tempRanges?.standard || 'Standard'
     },
     {
       code: 'PBT',
       name: 'Polybutylene Terephthalate',
       properties: 'Good electrical properties, chemical resistance',
-      tempRange: 'Standard'
+      tempRange: t?.materials?.tempRanges?.standard || 'Standard'
     },
     {
       code: 'PPS',
@@ -197,7 +197,7 @@ export default function Products() {
       code: 'PEI',
       name: 'Polyetherimide',
       properties: 'High strength at elevated temperatures, flame resistance',
-      tempRange: 'High temp'
+      tempRange: t?.materials?.tempRanges?.highTemp || 'High temp'
     }
   ]
 

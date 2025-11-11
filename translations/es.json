@@ -81,7 +81,13 @@
     "viewCatalog": "Ver Catálogo Completo",
     "needCustom": "¿Necesita Componentes Personalizados?",
     "customDescription": "Nuestro equipo está listo para discutir sus requerimientos y fabricar componentes según sus especificaciones exactas.",
-    "discussProject": "Discutir Su Proyecto"
+    "discussProject": "Discutir Su Proyecto",
+    "tempRanges": {
+      "standard": "Rango estándar",
+      "extreme": "Rango extremo",
+      "highTemp": "Alta temperatura",
+      "enhanced": "Mejorado"
+    }
   },
   "certifications": {
     "title": "Certificaciones y Calidad",
@@ -133,7 +139,19 @@
     "customSolutions": "Soluciones personalizadas",
     "iatfCertified": "IATF 16949:2016",
     "dqsCertified": "Certificado por DQS Alemania",
-    "validUntil": "Válido hasta 14 de julio de 2028"
+    "validUntil": "Válido hasta 14 de julio de 2028",
+    "namePlaceholder": "Su nombre",
+    "emailPlaceholder": "su@correo.com",
+    "companyPlaceholder": "Nombre de su empresa",
+    "sending": "Enviando...",
+    "pleaseWait": "Por favor espere un momento e intente de nuevo.",
+    "thankYou": "¡Gracias! Nos pondremos en contacto en 24 horas.",
+    "errorSending": "Hubo un error al enviar su solicitud. Por favor intente de nuevo.",
+    "recaptchaText": "Este sitio está protegido por reCAPTCHA y se aplican la",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "and": "y los",
+    "apply": "de Google."
   },
   "products": {
     "title": "Catálogo de Productos",
