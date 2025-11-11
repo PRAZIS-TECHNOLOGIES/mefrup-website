@@ -100,7 +100,38 @@
     "qualityTitle": "Herramientas de Calidad",
     "qualityDescription": "Implementación de APQP, PPAP, SPC, FMEA y metodologías de mejora continua.",
     "oemTitle": "Proveedor OEM/MRO Calificado",
-    "oemDescription": "Proveedor calificado para principales OEM automotrices con capacidades de trazabilidad completa."
+    "oemDescription": "Proveedor calificado para principales OEM automotrices con capacidades de trazabilidad completa.",
+    "current": "Actual",
+    "qualitySystemsTitle": "Sistemas y Herramientas de Calidad",
+    "journeyTitle": "Nuestro Camino hacia la Excelencia",
+    "qualityFeatures": {
+      "dqsAudited": "Procesos Auditados por DQS Alemania",
+      "oemQualified": "Proveedor Calificado OEM y ORM Automotriz",
+      "traceability": "Trazabilidad Completa de Productos",
+      "continuousImprovement": "Programas de Mejora Continua",
+      "apqp": "Planeación Avanzada de Calidad (APQP)",
+      "ppap": "Proceso de Aprobación de Partes de Producción (PPAP)",
+      "spc": "Control Estadístico de Procesos (SPC)",
+      "fmea": "Análisis de Modo y Efectos de Falla (FMEA)"
+    },
+    "timeline": {
+      "2003": {
+        "title": "Fundación y Crecimiento",
+        "description": "Estrategia de sustitución de importaciones y desarrollo del mercado nacional."
+      },
+      "2015": {
+        "title": "Desarrollo Técnico",
+        "description": "Capacidades de precisión, inversión en equipos y expansión de instalaciones."
+      },
+      "2020": {
+        "title": "Certificación OEM",
+        "description": "Certificación IATF 16949 lograda y establecimiento de asociaciones de suministro OEM."
+      },
+      "2024": {
+        "title": "Expansión de Mercado",
+        "description": "Crecimiento del suministro automotriz certificado a clientes internacionales."
+      }
+    }
   },
   "about": {
     "title": "Acerca de MEFRUP",
@@ -115,7 +146,22 @@
     "customSolutions": "Soluciones Personalizadas",
     "customSolutionsText": "Capacidad de ingeniería para desarrollar y fabricar componentes según especificaciones exactas del cliente.",
     "commitment": "Nuestro Compromiso",
-    "commitmentText": "Estamos comprometidos con la entrega de componentes de la más alta calidad que cumplen o exceden los estándares de la industria. Nuestro equipo trabaja en estrecha colaboración con los clientes para asegurar que cada proyecto se complete según especificaciones y a tiempo."
+    "commitmentText": "Estamos comprometidos con la entrega de componentes de la más alta calidad que cumplen o exceden los estándares de la industria. Nuestro equipo trabaja en estrecha colaboración con los clientes para asegurar que cada proyecto se complete según especificaciones y a tiempo.",
+    "industriesTitle": "Industrias que Servimos",
+    "industries": {
+      "automotive": "Manufactura Automotriz",
+      "heavyMachinery": "Maquinaria Pesada",
+      "industrial": "Equipo Industrial",
+      "production": "Sistemas de Producción",
+      "oemDistributors": "Distribuidores OEM",
+      "aftermarket": "Suministro Aftermarket"
+    },
+    "stats": {
+      "yearsLabel": "Años de Excelencia",
+      "qualityLabel": "Estándares de Calidad OEM/ORM",
+      "supportLabel": "Soporte al Cliente",
+      "certificationLabel": "Certificación Válida Hasta"
+    }
   },
   "contact": {
     "title": "Solicitar Cotización",
@@ -199,6 +245,27 @@
     "contact": "Contacto",
     "followUs": "Síguenos",
     "rights": "Todos los derechos reservados.",
-    "quality": "Calidad certificada IATF 16949:2016 | Auditado por DQS Alemania"
+    "quality": "Calidad certificada IATF 16949:2016 | Auditado por DQS Alemania",
+    "company": {
+      "aboutUs": "Nosotros",
+      "certifications": "Certificaciones",
+      "qualityStandards": "Estándares de Calidad"
+    },
+    "services": {
+      "automotiveComponents": "Componentes Automotrices",
+      "industrialParts": "Partes Industriales",
+      "oemSupply": "Suministro OEM"
+    },
+    "support": {
+      "contactUs": "Contáctanos",
+      "requestQuote": "Solicitar Cotización",
+      "technicalSupport": "Soporte Técnico"
+    },
+    "certBanner": {
+      "certified": "Certificado",
+      "auditedBy": "Auditado Por",
+      "validUntil": "Válido Hasta",
+      "established": "Establecido"
+    }
   }
 }

@@ -8,19 +8,19 @@ export default function Footer() {
 
   const footerLinks = {
     company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Certifications', href: '#certifications' },
-      { name: 'Quality Standards', href: '#certifications' },
+      { name: t?.footer?.company?.aboutUs || 'About Us', href: '#about' },
+      { name: t?.footer?.company?.certifications || 'Certifications', href: '#certifications' },
+      { name: t?.footer?.company?.qualityStandards || 'Quality Standards', href: '#certifications' },
     ],
     services: [
-      { name: 'Automotive Components', href: '#services' },
-      { name: 'Industrial Parts', href: '#services' },
-      { name: 'OEM Supply', href: '#services' },
+      { name: t?.footer?.services?.automotiveComponents || 'Automotive Components', href: '#services' },
+      { name: t?.footer?.services?.industrialParts || 'Industrial Parts', href: '#services' },
+      { name: t?.footer?.services?.oemSupply || 'OEM Supply', href: '#services' },
     ],
     support: [
-      { name: 'Contact Us', href: '#contact' },
-      { name: 'Request Quote', href: '#contact' },
-      { name: 'Technical Support', href: '#contact' },
+      { name: t?.footer?.support?.contactUs || 'Contact Us', href: '#contact' },
+      { name: t?.footer?.support?.requestQuote || 'Request Quote', href: '#contact' },
+      { name: t?.footer?.support?.technicalSupport || 'Technical Support', href: '#contact' },
     ],
   }
 
@@ -120,19 +120,19 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8 mb-8">
           <div className="flex flex-wrap justify-center gap-8 text-center">
             <div>
-              <p className="text-sm text-gray-400 mb-1">Certified</p>
+              <p className="text-sm text-gray-400 mb-1">{t?.footer?.certBanner?.certified || 'Certified'}</p>
               <p className="font-bold text-accent-dark">IATF 16949:2016</p>
             </div>
             <div>
-              <p className="text-sm text-gray-400 mb-1">Audited By</p>
+              <p className="text-sm text-gray-400 mb-1">{t?.footer?.certBanner?.auditedBy || 'Audited By'}</p>
               <p className="font-bold">DQS Germany</p>
             </div>
             <div>
-              <p className="text-sm text-gray-400 mb-1">Valid Until</p>
+              <p className="text-sm text-gray-400 mb-1">{t?.footer?.certBanner?.validUntil || 'Valid Until'}</p>
               <p className="font-bold">July 14, 2028</p>
             </div>
             <div>
-              <p className="text-sm text-gray-400 mb-1">Established</p>
+              <p className="text-sm text-gray-400 mb-1">{t?.footer?.certBanner?.established || 'Established'}</p>
               <p className="font-bold">2003</p>
             </div>
           </div>

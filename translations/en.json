@@ -100,7 +100,38 @@
     "qualityTitle": "Quality Tools",
     "qualityDescription": "Implementation of APQP, PPAP, SPC, FMEA, and continuous improvement methodologies.",
     "oemTitle": "Qualified OEM/MRO Supplier",
-    "oemDescription": "Qualified supplier for major automotive OEMs with full traceability capabilities."
+    "oemDescription": "Qualified supplier for major automotive OEMs with full traceability capabilities.",
+    "current": "Current",
+    "qualitySystemsTitle": "Quality Systems & Tools",
+    "journeyTitle": "Our Journey to Excellence",
+    "qualityFeatures": {
+      "dqsAudited": "DQS Germany Audited Processes",
+      "oemQualified": "Automotive OEM & ORM Qualified Supplier",
+      "traceability": "Full Product Traceability",
+      "continuousImprovement": "Continuous Improvement Programs",
+      "apqp": "Advanced Quality Planning (APQP)",
+      "ppap": "Production Part Approval Process (PPAP)",
+      "spc": "Statistical Process Control (SPC)",
+      "fmea": "Failure Mode Effects Analysis (FMEA)"
+    },
+    "timeline": {
+      "2003": {
+        "title": "Foundation & Growth",
+        "description": "Import replacement strategy and national market development."
+      },
+      "2015": {
+        "title": "Technical Development",
+        "description": "Precision capabilities, equipment investment, and facility expansion."
+      },
+      "2020": {
+        "title": "OEM Certification",
+        "description": "IATF 16949 certification achieved and OEM supply partnerships established."
+      },
+      "2024": {
+        "title": "Market Expansion",
+        "description": "Growing certified automotive supply to international customers."
+      }
+    }
   },
   "about": {
     "title": "About MEFRUP",
@@ -115,7 +146,22 @@
     "customSolutions": "Custom Solutions",
     "customSolutionsText": "Engineering capability to develop and manufacture components to exact customer specifications.",
     "commitment": "Our Commitment",
-    "commitmentText": "We are committed to delivering the highest quality components that meet or exceed industry standards. Our team works closely with customers to ensure every project is completed to specification and on time."
+    "commitmentText": "We are committed to delivering the highest quality components that meet or exceed industry standards. Our team works closely with customers to ensure every project is completed to specification and on time.",
+    "industriesTitle": "Industries We Serve",
+    "industries": {
+      "automotive": "Automotive Manufacturing",
+      "heavyMachinery": "Heavy Machinery",
+      "industrial": "Industrial Equipment",
+      "production": "Production Systems",
+      "oemDistributors": "OEM Distributors",
+      "aftermarket": "Aftermarket Supply"
+    },
+    "stats": {
+      "yearsLabel": "Years of Excellence",
+      "qualityLabel": "OEM/ORM Quality Standards",
+      "supportLabel": "Customer Support",
+      "certificationLabel": "Certification Valid Until"
+    }
   },
   "contact": {
     "title": "Get a Quote",
@@ -199,6 +245,27 @@
     "contact": "Contact",
     "followUs": "Follow Us",
     "rights": "All rights reserved.",
-    "quality": "IATF 16949:2016 Certified Quality | Audited by DQS Germany"
+    "quality": "IATF 16949:2016 Certified Quality | Audited by DQS Germany",
+    "company": {
+      "aboutUs": "About Us",
+      "certifications": "Certifications",
+      "qualityStandards": "Quality Standards"
+    },
+    "services": {
+      "automotiveComponents": "Automotive Components",
+      "industrialParts": "Industrial Parts",
+      "oemSupply": "OEM Supply"
+    },
+    "support": {
+      "contactUs": "Contact Us",
+      "requestQuote": "Request Quote",
+      "technicalSupport": "Technical Support"
+    },
+    "certBanner": {
+      "certified": "Certified",
+      "auditedBy": "Audited By",
+      "validUntil": "Valid Until",
+      "established": "Established"
+    }
   }
 }

@@ -26,12 +26,12 @@ export default function About() {
   ]
 
   const industries = [
-    'Automotive Manufacturing',
-    'Heavy Machinery',
-    'Industrial Equipment',
-    'Production Systems',
-    'OEM Distributors',
-    'Aftermarket Supply',
+    t?.about?.industries?.automotive || 'Automotive Manufacturing',
+    t?.about?.industries?.heavyMachinery || 'Heavy Machinery',
+    t?.about?.industries?.industrial || 'Industrial Equipment',
+    t?.about?.industries?.production || 'Production Systems',
+    t?.about?.industries?.oemDistributors || 'OEM Distributors',
+    t?.about?.industries?.aftermarket || 'Aftermarket Supply',
   ]
 
   return (
@@ -148,7 +148,7 @@ export default function About() {
           className="bg-white p-10 rounded-2xl border border-gray-200 shadow-md"
         >
           <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
-            Industries We Serve
+            {t?.about?.industriesTitle || 'Industries We Serve'}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {industries.map((industry, index) => (
@@ -186,10 +186,10 @@ export default function About() {
           className="grid md:grid-cols-4 gap-8 mt-16"
         >
           {[
-            { number: 22, suffix: '+', label: 'Years of Excellence', animated: true },
-            { number: 100, suffix: '%', label: 'OEM/ORM Quality Standards', animated: true },
-            { number: null, text: '24/7', label: 'Customer Support', animated: false },
-            { number: 2028, suffix: '', label: 'Certification Valid Until', animated: true },
+            { number: 22, suffix: '+', label: t?.about?.stats?.yearsLabel || 'Years of Excellence', animated: true },
+            { number: 100, suffix: '%', label: t?.about?.stats?.qualityLabel || 'OEM/ORM Quality Standards', animated: true },
+            { number: null, text: '24/7', label: t?.about?.stats?.supportLabel || 'Customer Support', animated: false },
+            { number: 2028, suffix: '', label: t?.about?.stats?.certificationLabel || 'Certification Valid Until', animated: true },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}

@@ -18,43 +18,43 @@ export default function Certifications() {
     {
       title: t?.certifications?.isoTitle || 'ISO 9001:2015',
       description: t?.certifications?.isoDescription || 'Certified quality management system for manufacturing processes.',
-      validUntil: 'Current',
+      validUntil: t?.certifications?.current || 'Current',
       icon: Award,
       color: 'bg-yellow-100 text-yellow-700',
     },
   ]
 
   const qualityFeatures = [
-    'DQS Germany Audited Processes',
-    'Automotive OEM & ORM Qualified Supplier',
-    'Full Product Traceability',
-    'Continuous Improvement Programs',
-    'Advanced Quality Planning (APQP)',
-    'Production Part Approval Process (PPAP)',
-    'Statistical Process Control (SPC)',
-    'Failure Mode Effects Analysis (FMEA)',
+    t?.certifications?.qualityFeatures?.dqsAudited || 'DQS Germany Audited Processes',
+    t?.certifications?.qualityFeatures?.oemQualified || 'Automotive OEM & ORM Qualified Supplier',
+    t?.certifications?.qualityFeatures?.traceability || 'Full Product Traceability',
+    t?.certifications?.qualityFeatures?.continuousImprovement || 'Continuous Improvement Programs',
+    t?.certifications?.qualityFeatures?.apqp || 'Advanced Quality Planning (APQP)',
+    t?.certifications?.qualityFeatures?.ppap || 'Production Part Approval Process (PPAP)',
+    t?.certifications?.qualityFeatures?.spc || 'Statistical Process Control (SPC)',
+    t?.certifications?.qualityFeatures?.fmea || 'Failure Mode Effects Analysis (FMEA)',
   ]
 
   const timeline = [
     {
       year: '2003-2015',
-      title: 'Foundation & Growth',
-      description: 'Import replacement strategy and national market development.',
+      title: t?.certifications?.timeline?.['2003']?.title || 'Foundation & Growth',
+      description: t?.certifications?.timeline?.['2003']?.description || 'Import replacement strategy and national market development.',
     },
     {
       year: '2015-2020',
-      title: 'Technical Development',
-      description: 'Precision capabilities, equipment investment, and facility expansion.',
+      title: t?.certifications?.timeline?.['2015']?.title || 'Technical Development',
+      description: t?.certifications?.timeline?.['2015']?.description || 'Precision capabilities, equipment investment, and facility expansion.',
     },
     {
       year: '2020-2024',
-      title: 'OEM Certification',
-      description: 'IATF 16949 certification achieved and OEM supply partnerships established.',
+      title: t?.certifications?.timeline?.['2020']?.title || 'OEM Certification',
+      description: t?.certifications?.timeline?.['2020']?.description || 'IATF 16949 certification achieved and OEM supply partnerships established.',
     },
     {
       year: '2024-2028',
-      title: 'Market Expansion',
-      description: 'Growing certified automotive supply to international customers.',
+      title: t?.certifications?.timeline?.['2024']?.title || 'Market Expansion',
+      description: t?.certifications?.timeline?.['2024']?.description || 'Growing certified automotive supply to international customers.',
     },
   ]
 
@@ -145,7 +145,7 @@ export default function Certifications() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-2xl font-bold text-foreground mb-8 text-center relative z-10"
           >
-            Quality Systems & Tools
+            {t?.certifications?.qualitySystemsTitle || 'Quality Systems & Tools'}
           </motion.h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
             {qualityFeatures.map((feature, index) => (
@@ -189,7 +189,7 @@ export default function Certifications() {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-3xl font-bold text-foreground mb-12 text-center">
-            Our Journey to Excellence
+            {t?.certifications?.journeyTitle || 'Our Journey to Excellence'}
           </h3>
           <div className="relative pt-8">
             {/* Timeline Line */}
