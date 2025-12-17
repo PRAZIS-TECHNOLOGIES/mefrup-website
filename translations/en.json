@@ -16,13 +16,45 @@
     "certifiedQuality": "Certified Quality",
     "oemSupplier": "OEM/MRO Supplier",
     "getQuote": "Get Quote",
-    "viewProducts": "View Products"
+    "viewProducts": "View Products",
+    "features": {
+      "precision": {
+        "title": "Precision Manufacturing",
+        "description": "ISO-certified facilities producing components that meet strict automotive OEM requirements."
+      },
+      "quality": {
+        "title": "Certified Quality",
+        "description": "IATF 16949:2016 and ISO 9001:2018 certified with DQS Germany audited processes."
+      },
+      "operations": {
+        "title": "North American Operations",
+        "description": "Manufacturing in Mexico with fast delivery across North America and competitive lead times."
+      }
+    }
   },
   "anniversary": {
     "celebrating": "CELEBRATING",
     "years": "22 YEARS",
     "excellence": "of Manufacturing Excellence",
     "tagline": "Where German Quality Meets Mexican Agility",
+    "milestones": {
+      "2003": {
+        "title": "Founded",
+        "description": "MEFRUP established in Mexico"
+      },
+      "2015": {
+        "title": "Expansion",
+        "description": "Facility upgrades and capacity growth"
+      },
+      "2024": {
+        "title": "IATF Certified",
+        "description": "Achieved automotive quality certification"
+      },
+      "2025": {
+        "title": "22 Years",
+        "description": "Celebrating excellence and growth"
+      }
+    },
     "stats": {
       "years": "YEARS",
       "yearsLabel": "Excellence",
@@ -87,6 +119,28 @@
       "extreme": "Extreme range",
       "highTemp": "High temp",
       "enhanced": "Enhanced"
+    },
+    "rubber": {
+      "NBR": { "name": "Nitrile Butadiene Rubber", "properties": "Oil and fuel resistance" },
+      "EPDM": { "name": "Ethylene Propylene Diene Monomer", "properties": "Ozone, weather, and high temperature resistance" },
+      "FKM": { "name": "Fluoroelastomer", "properties": "Superior chemical resistance, high temperature" },
+      "VMQ": { "name": "Silicone Rubber", "properties": "Extreme temperature flexibility" },
+      "CR": { "name": "Neoprene/Chloroprene", "properties": "Balanced properties for general purpose applications" },
+      "FFKM": { "name": "Perfluoroelastomer", "properties": "Ultimate chemical resistance for extreme applications" }
+    },
+    "plastic": {
+      "PA6": { "name": "Nylon 6", "properties": "High strength, good chemical resistance" },
+      "PA66": { "name": "Nylon 66", "properties": "Enhanced mechanical properties, higher temperature resistance" },
+      "PA66GF30": { "name": "Glass Filled Nylon", "properties": "30% glass fiber reinforcement for superior strength" },
+      "POM": { "name": "Polyoxymethylene/Acetal", "properties": "Excellent dimensional stability, low friction, chemical resistance" },
+      "PC": { "name": "Polycarbonate", "properties": "High impact strength, optical clarity" },
+      "ABS": { "name": "Acrylonitrile Butadiene Styrene", "properties": "Good balance of strength, toughness, and processability" },
+      "PP": { "name": "Polypropylene", "properties": "Chemical resistance, low density, cost-effective" },
+      "PEUHMW": { "name": "Ultra High Molecular Weight Polyethylene", "properties": "Exceptional wear resistance, self-lubricating" },
+      "PBT": { "name": "Polybutylene Terephthalate", "properties": "Good electrical properties, chemical resistance" },
+      "PPS": { "name": "Polyphenylene Sulfide", "properties": "High temperature resistance, dimensional stability" },
+      "PEEK": { "name": "Polyetheretherketone", "properties": "Ultimate performance, chemical inertness" },
+      "PEI": { "name": "Polyetherimide", "properties": "High strength at elevated temperatures, flame resistance" }
     }
   },
   "certifications": {
@@ -177,6 +231,7 @@
     "sendRequest": "Send Quote Request",
     "responseNote": "We'll respond with technical specifications and pricing within 24 hours.",
     "location": "Location",
+    "locationCountry": "Mexico",
     "locationText": "Manufacturing facility serving customers across Mexico and the United States.",
     "whyChoose": "Why Choose Us",
     "experience": "22+ years experience",
@@ -237,7 +292,8 @@
     "requestQuote": "Request a quote",
     "certifications": "Our certifications",
     "servicesOffered": "Services offered",
-    "contactInfo": "Contact information"
+    "contactInfo": "Contact information",
+    "initialMessage": "Hello! I'm MEFRUP's assistant. How can I help you today?"
   },
   "footer": {
     "tagline": "Precision Manufacturer of Automotive Components",

@@ -16,13 +16,45 @@
     "certifiedQuality": "Zertifizierte Qualität",
     "oemSupplier": "OEM/MRO-Lieferant",
     "getQuote": "Angebot anfordern",
-    "viewProducts": "Produkte ansehen"
+    "viewProducts": "Produkte ansehen",
+    "features": {
+      "precision": {
+        "title": "Präzisionsfertigung",
+        "description": "ISO-zertifizierte Anlagen, die Komponenten produzieren, die strenge OEM-Anforderungen erfüllen."
+      },
+      "quality": {
+        "title": "Zertifizierte Qualität",
+        "description": "IATF 16949:2016 und ISO 9001:2018 zertifiziert mit DQS Deutschland-geprüften Prozessen."
+      },
+      "operations": {
+        "title": "Nordamerikanische Operationen",
+        "description": "Fertigung in Mexiko mit schneller Lieferung in ganz Nordamerika und wettbewerbsfähigen Lieferzeiten."
+      }
+    }
   },
   "anniversary": {
     "celebrating": "FEIERN",
     "years": "22 JAHRE",
     "excellence": "Fertigungsexzellenz",
     "tagline": "Wo Deutsche Qualität auf Mexikanische Agilität trifft",
+    "milestones": {
+      "2003": {
+        "title": "Gründung",
+        "description": "MEFRUP in Mexiko gegründet"
+      },
+      "2015": {
+        "title": "Erweiterung",
+        "description": "Anlagenmodernisierung und Kapazitätserweiterung"
+      },
+      "2024": {
+        "title": "IATF Zertifiziert",
+        "description": "Automobilqualitätszertifizierung erreicht"
+      },
+      "2025": {
+        "title": "22 Jahre",
+        "description": "Exzellenz und Wachstum feiern"
+      }
+    },
     "stats": {
       "years": "JAHRE",
       "yearsLabel": "Exzellenz",
@@ -81,7 +113,35 @@
     "viewCatalog": "Vollständigen Katalog ansehen",
     "needCustom": "Benötigen Sie kundenspezifische Komponenten?",
     "customDescription": "Unser Team ist bereit, Ihre Anforderungen zu besprechen und Komponenten nach Ihren exakten Spezifikationen zu fertigen.",
-    "discussProject": "Ihr Projekt besprechen"
+    "discussProject": "Ihr Projekt besprechen",
+    "tempRanges": {
+      "standard": "Standardbereich",
+      "extreme": "Extrembereich",
+      "highTemp": "Hochtemperatur",
+      "enhanced": "Erweitert"
+    },
+    "rubber": {
+      "NBR": { "name": "Nitril-Butadien-Kautschuk", "properties": "Öl- und Kraftstoffbeständigkeit" },
+      "EPDM": { "name": "Ethylen-Propylen-Dien-Monomer", "properties": "Ozon-, Witterungs- und Hochtemperaturbeständigkeit" },
+      "FKM": { "name": "Fluorelastomer", "properties": "Überlegene chemische Beständigkeit, hohe Temperatur" },
+      "VMQ": { "name": "Silikonkautschuk", "properties": "Extreme Temperaturflexibilität" },
+      "CR": { "name": "Neopren/Chloropren", "properties": "Ausgewogene Eigenschaften für allgemeine Anwendungen" },
+      "FFKM": { "name": "Perfluorelastomer", "properties": "Höchste chemische Beständigkeit für extreme Anwendungen" }
+    },
+    "plastic": {
+      "PA6": { "name": "Nylon 6", "properties": "Hohe Festigkeit, gute chemische Beständigkeit" },
+      "PA66": { "name": "Nylon 66", "properties": "Verbesserte mechanische Eigenschaften, höhere Temperaturbeständigkeit" },
+      "PA66GF30": { "name": "Glasfaserverstärktes Nylon", "properties": "30% Glasfaserverstärkung für überlegene Festigkeit" },
+      "POM": { "name": "Polyoxymethylen/Acetal", "properties": "Hervorragende Dimensionsstabilität, geringe Reibung, chemische Beständigkeit" },
+      "PC": { "name": "Polycarbonat", "properties": "Hohe Schlagfestigkeit, optische Klarheit" },
+      "ABS": { "name": "Acrylnitril-Butadien-Styrol", "properties": "Gute Balance aus Festigkeit, Zähigkeit und Verarbeitbarkeit" },
+      "PP": { "name": "Polypropylen", "properties": "Chemische Beständigkeit, geringe Dichte, kostengünstig" },
+      "PEUHMW": { "name": "Ultrahochmolekulares Polyethylen", "properties": "Außergewöhnliche Verschleißfestigkeit, selbstschmierend" },
+      "PBT": { "name": "Polybutylenterephthalat", "properties": "Gute elektrische Eigenschaften, chemische Beständigkeit" },
+      "PPS": { "name": "Polyphenylensulfid", "properties": "Hohe Temperaturbeständigkeit, Dimensionsstabilität" },
+      "PEEK": { "name": "Polyetheretherketon", "properties": "Ultimative Leistung, chemische Inertheit" },
+      "PEI": { "name": "Polyetherimid", "properties": "Hohe Festigkeit bei erhöhten Temperaturen, Flammfestigkeit" }
+    }
   },
   "certifications": {
     "title": "Zertifizierungen und Qualität",
@@ -125,6 +185,7 @@
     "sendRequest": "Angebotsanfrage senden",
     "responseNote": "Wir antworten mit technischen Spezifikationen und Preisen innerhalb von 24 Stunden.",
     "location": "Standort",
+    "locationCountry": "Mexiko",
     "locationText": "Fertigungsanlage mit Kunden in Mexiko und den Vereinigten Staaten.",
     "whyChoose": "Warum wir",
     "experience": "22+ Jahre Erfahrung",
@@ -173,7 +234,8 @@
     "requestQuote": "Angebot anfordern",
     "certifications": "Unsere Zertifizierungen",
     "servicesOffered": "Angebotene Dienstleistungen",
-    "contactInfo": "Kontaktinformationen"
+    "contactInfo": "Kontaktinformationen",
+    "initialMessage": "Hallo! Ich bin der MEFRUP-Assistent. Wie kann ich Ihnen heute helfen?"
   },
   "footer": {
     "tagline": "Präzisionshersteller von Automobilkomponenten",

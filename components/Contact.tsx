@@ -218,7 +218,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground mb-1">{t?.contact?.location || 'Location'}</h4>
-                  <p className="text-sm text-secondary">Mexico</p>
+                  <p className="text-sm text-secondary">{t?.contact?.locationCountry || 'Mexico'}</p>
                 </div>
               </div>
               <p className="text-sm text-secondary">

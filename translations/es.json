@@ -16,13 +16,45 @@
     "certifiedQuality": "Calidad Certificada",
     "oemSupplier": "Proveedor OEM/MRO",
     "getQuote": "Solicitar Cotización",
-    "viewProducts": "Ver Productos"
+    "viewProducts": "Ver Productos",
+    "features": {
+      "precision": {
+        "title": "Manufactura de Precisión",
+        "description": "Instalaciones certificadas ISO produciendo componentes que cumplen con los estrictos requisitos OEM automotrices."
+      },
+      "quality": {
+        "title": "Calidad Certificada",
+        "description": "Certificados IATF 16949:2016 e ISO 9001:2018 con procesos auditados por DQS Alemania."
+      },
+      "operations": {
+        "title": "Operaciones en Norteamérica",
+        "description": "Manufactura en México con entrega rápida en toda Norteamérica y tiempos de entrega competitivos."
+      }
+    }
   },
   "anniversary": {
     "celebrating": "CELEBRANDO",
     "years": "22 AÑOS",
     "excellence": "de Excelencia en Manufactura",
     "tagline": "Donde la Calidad Alemana se Encuentra con la Agilidad Mexicana",
+    "milestones": {
+      "2003": {
+        "title": "Fundación",
+        "description": "MEFRUP establecido en México"
+      },
+      "2015": {
+        "title": "Expansión",
+        "description": "Mejoras en instalaciones y crecimiento de capacidad"
+      },
+      "2024": {
+        "title": "Certificación IATF",
+        "description": "Certificación de calidad automotriz obtenida"
+      },
+      "2025": {
+        "title": "22 Años",
+        "description": "Celebrando excelencia y crecimiento"
+      }
+    },
     "stats": {
       "years": "AÑOS",
       "yearsLabel": "Excelencia",
@@ -87,6 +119,28 @@
       "extreme": "Rango extremo",
       "highTemp": "Alta temperatura",
       "enhanced": "Mejorado"
+    },
+    "rubber": {
+      "NBR": { "name": "Caucho de Nitrilo Butadieno", "properties": "Resistencia a aceites y combustibles" },
+      "EPDM": { "name": "Monómero de Etileno Propileno Dieno", "properties": "Resistencia al ozono, clima y alta temperatura" },
+      "FKM": { "name": "Fluoroelastómero", "properties": "Resistencia química superior, alta temperatura" },
+      "VMQ": { "name": "Caucho de Silicona", "properties": "Flexibilidad a temperaturas extremas" },
+      "CR": { "name": "Neopreno/Cloropreno", "properties": "Propiedades equilibradas para aplicaciones generales" },
+      "FFKM": { "name": "Perfluoroelastómero", "properties": "Resistencia química máxima para aplicaciones extremas" }
+    },
+    "plastic": {
+      "PA6": { "name": "Nylon 6", "properties": "Alta resistencia, buena resistencia química" },
+      "PA66": { "name": "Nylon 66", "properties": "Propiedades mecánicas mejoradas, mayor resistencia térmica" },
+      "PA66GF30": { "name": "Nylon Reforzado con Fibra de Vidrio", "properties": "30% de fibra de vidrio para resistencia superior" },
+      "POM": { "name": "Polioximetileno/Acetal", "properties": "Excelente estabilidad dimensional, baja fricción, resistencia química" },
+      "PC": { "name": "Policarbonato", "properties": "Alta resistencia al impacto, claridad óptica" },
+      "ABS": { "name": "Acrilonitrilo Butadieno Estireno", "properties": "Buen equilibrio de resistencia, dureza y procesabilidad" },
+      "PP": { "name": "Polipropileno", "properties": "Resistencia química, baja densidad, económico" },
+      "PEUHMW": { "name": "Polietileno de Ultra Alto Peso Molecular", "properties": "Resistencia excepcional al desgaste, autolubricante" },
+      "PBT": { "name": "Tereftalato de Polibutileno", "properties": "Buenas propiedades eléctricas, resistencia química" },
+      "PPS": { "name": "Sulfuro de Polifenileno", "properties": "Resistencia a alta temperatura, estabilidad dimensional" },
+      "PEEK": { "name": "Poliéter Éter Cetona", "properties": "Rendimiento máximo, inercia química" },
+      "PEI": { "name": "Polieterimida", "properties": "Alta resistencia a temperaturas elevadas, resistencia a la llama" }
     }
   },
   "certifications": {
@@ -177,6 +231,7 @@
     "sendRequest": "Enviar Solicitud de Cotización",
     "responseNote": "Responderemos con especificaciones técnicas y precios en 24 horas.",
     "location": "Ubicación",
+    "locationCountry": "México",
     "locationText": "Instalación de manufactura que sirve a clientes en México y Estados Unidos.",
     "whyChoose": "Por Qué Elegirnos",
     "experience": "22+ años de experiencia",
@@ -237,7 +292,8 @@
     "requestQuote": "Solicitar cotización",
     "certifications": "Nuestras certificaciones",
     "servicesOffered": "Servicios ofrecidos",
-    "contactInfo": "Información de contacto"
+    "contactInfo": "Información de contacto",
+    "initialMessage": "¡Hola! Soy el asistente de MEFRUP. ¿En qué puedo ayudarte hoy?"
   },
   "footer": {
     "tagline": "Fabricante de Precisión de Componentes Automotrices",

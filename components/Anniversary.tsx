@@ -11,26 +11,26 @@ export default function Anniversary() {
     {
       icon: Award,
       year: '2003',
-      title: 'Founded',
-      description: 'MEFRUP established in Mexico'
+      title: t?.anniversary?.milestones?.['2003']?.title || 'Founded',
+      description: t?.anniversary?.milestones?.['2003']?.description || 'MEFRUP established in Mexico'
     },
     {
       icon: TrendingUp,
       year: '2015',
-      title: 'Expansion',
-      description: 'Facility upgrades and capacity growth'
+      title: t?.anniversary?.milestones?.['2015']?.title || 'Expansion',
+      description: t?.anniversary?.milestones?.['2015']?.description || 'Facility upgrades and capacity growth'
     },
     {
       icon: Trophy,
       year: '2024',
-      title: 'IATF Certified',
-      description: 'Achieved automotive quality certification'
+      title: t?.anniversary?.milestones?.['2024']?.title || 'IATF Certified',
+      description: t?.anniversary?.milestones?.['2024']?.description || 'Achieved automotive quality certification'
     },
     {
       icon: Star,
       year: '2025',
-      title: '22 Years',
-      description: 'Celebrating excellence and growth'
+      title: t?.anniversary?.milestones?.['2025']?.title || '22 Years',
+      description: t?.anniversary?.milestones?.['2025']?.description || 'Celebrating excellence and growth'
     }
   ]
 

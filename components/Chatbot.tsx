@@ -15,17 +15,36 @@ interface Message {
 export default function Chatbot() {
   const { t } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: 1,
-      text: "Hello! I'm MEFRUP's assistant. How can I help you today?",
-      sender: 'bot',
-      timestamp: new Date(),
-    },
-  ])
+  const [messages, setMessages] = useState<Message[]>([])
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const initialMessageSet = useRef(false)
+
+  // Set initial message when translations are loaded
+  useEffect(() => {
+    if (!initialMessageSet.current) {
+      setMessages([{
+        id: 1,
+        text: t?.chatbot?.initialMessage || "Hello! I'm MEFRUP's assistant. How can I help you today?",
+        sender: 'bot',
+        timestamp: new Date(),
+      }])
+      initialMessageSet.current = true
+    }
+  }, [t])
+
+  // Update initial message when language changes
+  useEffect(() => {
+    if (messages.length === 1 && messages[0].id === 1) {
+      setMessages([{
+        id: 1,
+        text: t?.chatbot?.initialMessage || "Hello! I'm MEFRUP's assistant. How can I help you today?",
+        sender: 'bot',
+        timestamp: new Date(),
+      }])
+    }
+  }, [t?.chatbot?.initialMessage])
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })

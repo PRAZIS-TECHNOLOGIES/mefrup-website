@@ -136,22 +136,25 @@ export default function Hero() {
             {[
               {
                 icon: Factory,
-                title: 'Precision Manufacturing',
-                description: 'ISO-certified facilities producing components that meet strict automotive OEM requirements.',
+                key: 'precision',
+                title: t?.hero?.features?.precision?.title || 'Precision Manufacturing',
+                description: t?.hero?.features?.precision?.description || 'ISO-certified facilities producing components that meet strict automotive OEM requirements.',
               },
               {
                 icon: Award,
-                title: 'Certified Quality',
-                description: 'IATF 16949:2016 and ISO 9001:2018 certified with DQS Germany audited processes.',
+                key: 'quality',
+                title: t?.hero?.features?.quality?.title || 'Certified Quality',
+                description: t?.hero?.features?.quality?.description || 'IATF 16949:2016 and ISO 9001:2018 certified with DQS Germany audited processes.',
               },
               {
                 icon: Globe,
-                title: 'North American Operations',
-                description: 'Manufacturing in Mexico with fast delivery across North America and competitive lead times.',
+                key: 'operations',
+                title: t?.hero?.features?.operations?.title || 'North American Operations',
+                description: t?.hero?.features?.operations?.description || 'Manufacturing in Mexico with fast delivery across North America and competitive lead times.',
               },
             ].map((feature, index) => (
               <motion.div
-                key={feature.title}
+                key={feature.key}
                 initial={{ opacity: 0, x: 50, scale: 0.7 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{
