@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Download, CheckCircle, Search, Thermometer, Shield, Wrench } from 'lucide-react'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 
 export default function Products() {
@@ -87,7 +87,7 @@ export default function Products() {
 
   const sizes = getSizesForType(selectedType)
 
-  const rubberMaterials = [
+  const rubberMaterials = useMemo(() => [
     {
       code: 'NBR',
       name: t?.materials?.rubber?.NBR?.name || 'Nitrile Butadiene Rubber',
@@ -124,9 +124,9 @@ export default function Products() {
       properties: t?.materials?.rubber?.FFKM?.properties || 'Ultimate chemical resistance for extreme applications',
       tempRange: t?.materials?.tempRanges?.extreme || 'Extreme range'
     }
-  ]
+  ], [t])
 
-  const plasticMaterials = [
+  const plasticMaterials = useMemo(() => [
     {
       code: 'PA6',
       name: t?.materials?.plastic?.PA6?.name || 'Nylon 6',
@@ -199,7 +199,7 @@ export default function Products() {
       properties: t?.materials?.plastic?.PEI?.properties || 'High strength at elevated temperatures, flame resistance',
       tempRange: t?.materials?.tempRanges?.highTemp || 'High temp'
     }
-  ]
+  ], [t])
 
   // Get translated names - safe for hydration
   const getGasketTypeName = (id: string) => {
