@@ -11,7 +11,7 @@ import Certifications from '@/components/Certifications'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
-import Chatbot from '@/components/Chatbot'
+// import Chatbot from '@/components/Chatbot' // Temporarily disabled
 import SplashScreen from '@/components/SplashScreen'
 import StructuredData from '@/components/StructuredData'
 
@@ -45,7 +45,7 @@ export default function Home() {
             <About />
             <Contact />
             <Footer />
-            <Chatbot />
+            {/* <Chatbot /> */}
           </motion.main>
         )}
       </AnimatePresence>
