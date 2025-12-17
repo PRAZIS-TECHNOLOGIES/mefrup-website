@@ -4,11 +4,9 @@ import { motion } from 'framer-motion'
 import { MapPin, Send, Clock } from 'lucide-react'
 import { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
 export default function Contact() {
   const { t } = useLanguage()
-  const { executeRecaptcha } = useGoogleReCaptcha()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,25 +21,12 @@ export default function Contact() {
     setIsSubmitting(true)
 
     try {
-      // Get reCAPTCHA token
-      if (!executeRecaptcha) {
-        console.warn('reCAPTCHA not loaded yet')
-        alert(t?.contact?.pleaseWait || 'Please wait a moment and try again.')
-        setIsSubmitting(false)
-        return
-      }
-
-      const recaptchaToken = await executeRecaptcha('submit_quote')
-
       const response = await fetch('/api/send-quote', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          recaptchaToken
-        })
+        body: JSON.stringify(formData)
       })
 
       const data = await response.json()
@@ -201,17 +186,6 @@ export default function Contact() {
                 {t?.contact?.responseNote || "We'll respond with technical specifications and pricing within 24 hours."}
               </p>
 
-              <p className="text-xs text-gray-400 text-center mt-4">
-                {t?.contact?.recaptchaText || 'This site is protected by reCAPTCHA and the Google'}{' '}
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">
-                  {t?.contact?.privacyPolicy || 'Privacy Policy'}
-                </a>{' '}
-                {t?.contact?.and || 'and'}{' '}
-                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">
-                  {t?.contact?.termsOfService || 'Terms of Service'}
-                </a>{' '}
-                {t?.contact?.apply || 'apply.'}
-              </p>
             </form>
           </motion.div>
 
