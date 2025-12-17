@@ -54,9 +54,9 @@ export default function Hero() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1, duration: 0.5, type: "spring", stiffness: 150 }}
+              transition={{ delay: 0.6, duration: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Link
@@ -76,47 +76,47 @@ export default function Hero() {
 
             {/* Stats */}
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.8, duration: 0.7, type: "spring", stiffness: 100 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
               className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-gray-200"
             >
               <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
+                initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 2, duration: 0.5, type: "spring", stiffness: 200 }}
+                transition={{ delay: 0.9, duration: 0.4 }}
                 whileHover={{ scale: 1.05 }}
                 className="text-center lg:text-left"
               >
                 <AnimatedCounter
                   end={22}
                   suffix="+"
-                  startDelay={2000}
-                  duration={1500}
+                  startDelay={500}
+                  duration={1000}
                   className="text-3xl font-bold text-primary"
                 />
                 <div className="text-sm text-secondary mt-1">{t?.hero?.yearsExperience || 'Years Experience'}</div>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
+                initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 2.1, duration: 0.5, type: "spring", stiffness: 200 }}
+                transition={{ delay: 1, duration: 0.4 }}
                 whileHover={{ scale: 1.05 }}
                 className="text-center lg:text-left"
               >
                 <AnimatedCounter
                   end={100}
                   suffix="%"
-                  startDelay={2100}
-                  duration={1500}
+                  startDelay={600}
+                  duration={1000}
                   className="text-3xl font-bold text-primary"
                 />
                 <div className="text-sm text-secondary mt-1">{t?.hero?.oemSupplier || 'OEM/ORM Supplier'}</div>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
+                initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 2.2, duration: 0.5, type: "spring", stiffness: 200 }}
+                transition={{ delay: 1.1, duration: 0.4 }}
                 whileHover={{ scale: 1.05 }}
                 className="text-center lg:text-left"
               >
