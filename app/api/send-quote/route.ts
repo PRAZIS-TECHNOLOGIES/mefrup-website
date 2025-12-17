@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'MEFRUP Website <onboarding@resend.dev>',
+      from: 'MEFRUP Website <noreply@endhurorace.com>',
       to: ['ventas@mefrup.com'],
       replyTo: email,
       subject: `New Quote Request from ${name}`,
