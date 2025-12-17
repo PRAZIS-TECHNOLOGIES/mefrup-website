@@ -26,12 +26,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Disabled dark mode - always use light theme */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
@@ -51,6 +52,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light only;
 }
 
 /* Custom Animations */
