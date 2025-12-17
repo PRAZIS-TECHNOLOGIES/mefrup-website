@@ -15,13 +15,13 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Verify reCAPTCHA token
-    if (!recaptchaToken) {
-      return NextResponse.json(
-        { error: 'reCAPTCHA validation failed' },
-        { status: 400 }
-      )
-    }
+    // Verify reCAPTCHA token (optional for now)
+    // if (!recaptchaToken) {
+    //   return NextResponse.json(
+    //     { error: 'reCAPTCHA validation failed' },
+    //     { status: 400 }
+    //   )
+    // }
 
     // Verify reCAPTCHA with Google
     const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY
