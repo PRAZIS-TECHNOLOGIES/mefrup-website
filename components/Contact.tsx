@@ -200,6 +200,18 @@ export default function Contact() {
                 {t?.contact?.responseNote || "We'll respond with technical specifications and pricing within 24 hours."}
               </p>
 
+              <p className="text-xs text-gray-400 text-center mt-4">
+                {t?.contact?.recaptchaNotice || 'This site is protected by reCAPTCHA and the Google'}{' '}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">
+                  {t?.contact?.privacyPolicy || 'Privacy Policy'}
+                </a>{' '}
+                {t?.contact?.and || 'and'}{' '}
+                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">
+                  {t?.contact?.termsOfService || 'Terms of Service'}
+                </a>{' '}
+                {t?.contact?.apply || 'apply'}.
+              </p>
+
             </form>
           </motion.div>
 
