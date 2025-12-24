@@ -53,6 +53,17 @@ body {
 html {
   scroll-behavior: smooth;
   color-scheme: light only;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Prevent iOS font size inflation */
+@supports (-webkit-touch-callout: none) {
+  html {
+    font-size: 16px;
+  }
 }
 
 /* Custom Animations */
