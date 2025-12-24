@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Car, Settings, Package, Shield, Cog, Zap, LucideIcon } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import { useMemo } from 'react'
 
 interface Service {
   icon: LucideIcon
@@ -14,7 +15,7 @@ interface Service {
 export default function Services() {
   const { t } = useLanguage()
 
-  const services: Service[] = [
+  const services: Service[] = useMemo(() => [
     {
       icon: Car,
       title: t?.services?.automotive?.title || 'Automotive Sealing Systems',
@@ -51,7 +52,7 @@ export default function Services() {
       description: t?.services?.prototyping?.description || 'Fast prototyping and testing of new components with technical support.',
       features: t?.services?.prototyping?.features || ['Quick iterations', 'Technical collaboration', 'Pre-production validation'],
     },
-  ]
+  ], [t])
 
   return (
     <section id="services" className="py-24 bg-white">

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Thermometer, Shield, Wrench } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -10,119 +10,119 @@ export default function Materials() {
   const { t } = useLanguage()
   const [selectedCategory, setSelectedCategory] = useState('rubber')
 
-  const rubberMaterials = [
+  const rubberMaterials = useMemo(() => [
     {
       code: 'NBR',
-      name: 'Nitrile Butadiene Rubber',
-      properties: 'Oil and fuel resistance',
+      name: t?.materials?.rubber?.NBR?.name || 'Nitrile Butadiene Rubber',
+      properties: t?.materials?.rubber?.NBR?.properties || 'Oil and fuel resistance',
       tempRange: '-30°C to +120°C'
     },
     {
       code: 'EPDM',
-      name: 'Ethylene Propylene Diene Monomer',
-      properties: 'Ozone, weather, and high temperature resistance',
+      name: t?.materials?.rubber?.EPDM?.name || 'Ethylene Propylene Diene Monomer',
+      properties: t?.materials?.rubber?.EPDM?.properties || 'Ozone, weather, and high temperature resistance',
       tempRange: 'Up to +150°C'
     },
     {
       code: 'FKM/Viton',
-      name: 'Fluoroelastomer',
-      properties: 'Superior chemical resistance, high temperature',
+      name: t?.materials?.rubber?.FKM?.name || 'Fluoroelastomer',
+      properties: t?.materials?.rubber?.FKM?.properties || 'Superior chemical resistance, high temperature',
       tempRange: 'Up to +200°C'
     },
     {
       code: 'VMQ',
-      name: 'Silicone Rubber',
-      properties: 'Extreme temperature flexibility',
+      name: t?.materials?.rubber?.VMQ?.name || 'Silicone Rubber',
+      properties: t?.materials?.rubber?.VMQ?.properties || 'Extreme temperature flexibility',
       tempRange: '-60°C to +200°C'
     },
     {
       code: 'CR',
-      name: 'Neoprene/Chloroprene',
-      properties: 'Balanced properties for general purpose applications',
+      name: t?.materials?.rubber?.CR?.name || 'Neoprene/Chloroprene',
+      properties: t?.materials?.rubber?.CR?.properties || 'Balanced properties for general purpose applications',
       tempRange: t?.materials?.tempRanges?.standard || 'Standard range'
     },
     {
       code: 'FFKM',
-      name: 'Perfluoroelastomer',
-      properties: 'Ultimate chemical resistance for extreme applications',
+      name: t?.materials?.rubber?.FFKM?.name || 'Perfluoroelastomer',
+      properties: t?.materials?.rubber?.FFKM?.properties || 'Ultimate chemical resistance for extreme applications',
       tempRange: t?.materials?.tempRanges?.extreme || 'Extreme range'
     }
-  ]
+  ], [t])
 
-  const plasticMaterials = [
+  const plasticMaterials = useMemo(() => [
     {
       code: 'PA6',
-      name: 'Nylon 6',
-      properties: 'High strength, good chemical resistance',
+      name: t?.materials?.plastic?.PA6?.name || 'Nylon 6',
+      properties: t?.materials?.plastic?.PA6?.properties || 'High strength, good chemical resistance',
       tempRange: 'Up to +80°C'
     },
     {
       code: 'PA66',
-      name: 'Nylon 66',
-      properties: 'Enhanced mechanical properties, higher temperature resistance',
+      name: t?.materials?.plastic?.PA66?.name || 'Nylon 66',
+      properties: t?.materials?.plastic?.PA66?.properties || 'Enhanced mechanical properties, higher temperature resistance',
       tempRange: '+100°C'
     },
     {
       code: 'PA6.6-GF30',
-      name: 'Glass Filled Nylon',
-      properties: '30% glass fiber reinforcement for superior strength',
+      name: t?.materials?.plastic?.PA66GF30?.name || 'Glass Filled Nylon',
+      properties: t?.materials?.plastic?.PA66GF30?.properties || '30% glass fiber reinforcement for superior strength',
       tempRange: t?.materials?.tempRanges?.enhanced || 'Enhanced'
     },
     {
       code: 'POM',
-      name: 'Polyoxymethylene/Acetal',
-      properties: 'Excellent dimensional stability, low friction, chemical resistance',
+      name: t?.materials?.plastic?.POM?.name || 'Polyoxymethylene/Acetal',
+      properties: t?.materials?.plastic?.POM?.properties || 'Excellent dimensional stability, low friction, chemical resistance',
       tempRange: t?.materials?.tempRanges?.standard || 'Standard'
     },
     {
       code: 'PC',
-      name: 'Polycarbonate',
-      properties: 'High impact strength, optical clarity',
+      name: t?.materials?.plastic?.PC?.name || 'Polycarbonate',
+      properties: t?.materials?.plastic?.PC?.properties || 'High impact strength, optical clarity',
       tempRange: '+120°C'
     },
     {
       code: 'ABS',
-      name: 'Acrylonitrile Butadiene Styrene',
-      properties: 'Good balance of strength, toughness, and processability',
+      name: t?.materials?.plastic?.ABS?.name || 'Acrylonitrile Butadiene Styrene',
+      properties: t?.materials?.plastic?.ABS?.properties || 'Good balance of strength, toughness, and processability',
       tempRange: t?.materials?.tempRanges?.standard || 'Standard'
     },
     {
       code: 'PP',
-      name: 'Polypropylene',
-      properties: 'Chemical resistance, low density, cost-effective',
+      name: t?.materials?.plastic?.PP?.name || 'Polypropylene',
+      properties: t?.materials?.plastic?.PP?.properties || 'Chemical resistance, low density, cost-effective',
       tempRange: t?.materials?.tempRanges?.standard || 'Standard'
     },
     {
       code: 'PE-UHMW',
-      name: 'Ultra High Molecular Weight Polyethylene',
-      properties: 'Exceptional wear resistance, self-lubricating',
+      name: t?.materials?.plastic?.PEUHMW?.name || 'Ultra High Molecular Weight Polyethylene',
+      properties: t?.materials?.plastic?.PEUHMW?.properties || 'Exceptional wear resistance, self-lubricating',
       tempRange: t?.materials?.tempRanges?.standard || 'Standard'
     },
     {
       code: 'PBT',
-      name: 'Polybutylene Terephthalate',
-      properties: 'Good electrical properties, chemical resistance',
+      name: t?.materials?.plastic?.PBT?.name || 'Polybutylene Terephthalate',
+      properties: t?.materials?.plastic?.PBT?.properties || 'Good electrical properties, chemical resistance',
       tempRange: t?.materials?.tempRanges?.standard || 'Standard'
     },
     {
       code: 'PPS',
-      name: 'Polyphenylene Sulfide',
-      properties: 'High temperature resistance, dimensional stability',
+      name: t?.materials?.plastic?.PPS?.name || 'Polyphenylene Sulfide',
+      properties: t?.materials?.plastic?.PPS?.properties || 'High temperature resistance, dimensional stability',
       tempRange: '+200°C'
     },
     {
       code: 'PEEK',
-      name: 'Polyetheretherketone',
-      properties: 'Ultimate performance, chemical inertness',
+      name: t?.materials?.plastic?.PEEK?.name || 'Polyetheretherketone',
+      properties: t?.materials?.plastic?.PEEK?.properties || 'Ultimate performance, chemical inertness',
       tempRange: '+250°C'
     },
     {
       code: 'PEI',
-      name: 'Polyetherimide',
-      properties: 'High strength at elevated temperatures, flame resistance',
+      name: t?.materials?.plastic?.PEI?.name || 'Polyetherimide',
+      properties: t?.materials?.plastic?.PEI?.properties || 'High strength at elevated temperatures, flame resistance',
       tempRange: t?.materials?.tempRanges?.highTemp || 'High temp'
     }
-  ]
+  ], [t])
 
   const currentMaterials = selectedCategory === 'rubber' ? rubberMaterials : plasticMaterials
 

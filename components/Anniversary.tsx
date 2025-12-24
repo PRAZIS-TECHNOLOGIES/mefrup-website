@@ -4,10 +4,11 @@ import { motion } from 'framer-motion'
 import { Award, TrendingUp, Users, CheckCircle, Star, Trophy, Target, Zap } from 'lucide-react'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
+import { useMemo } from 'react'
 
 export default function Anniversary() {
   const { t } = useLanguage()
-  const milestones = [
+  const milestones = useMemo(() => [
     {
       icon: Award,
       year: '2003',
@@ -32,14 +33,14 @@ export default function Anniversary() {
       title: t?.anniversary?.milestones?.['2025']?.title || '22 Years',
       description: t?.anniversary?.milestones?.['2025']?.description || 'Celebrating excellence and growth'
     }
-  ]
+  ], [t])
 
-  const achievements = [
+  const achievements = useMemo(() => [
     { icon: Target, value: t?.anniversary?.stats?.years || '22', label: t?.anniversary?.stats?.yearsLabel || 'YEARS', sublabel: t?.anniversary?.stats?.yearsSublabel || 'EXCELLENCE' },
     { icon: Trophy, value: t?.anniversary?.stats?.iatf || 'IATF', label: t?.anniversary?.stats?.iatfLabel || '16949:2016', sublabel: t?.anniversary?.stats?.iatfSublabel || 'CERTIFIED' },
     { icon: Award, value: t?.anniversary?.stats?.dqs || 'DQS', label: t?.anniversary?.stats?.dqsLabel || 'GERMANY', sublabel: t?.anniversary?.stats?.dqsSublabel || 'AUDITED' },
     { icon: CheckCircle, value: t?.anniversary?.stats?.quality || '100%', label: t?.anniversary?.stats?.qualityLabel || 'OEM/MRO', sublabel: t?.anniversary?.stats?.qualitySublabel || 'QUALITY' },
-  ]
+  ], [t])
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
