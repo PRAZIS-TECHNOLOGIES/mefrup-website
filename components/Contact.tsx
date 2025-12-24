@@ -4,9 +4,11 @@ import { motion } from 'framer-motion'
 import { MapPin, Send, Clock } from 'lucide-react'
 import { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
 export default function Contact() {
   const { t } = useLanguage()
+  const { executeRecaptcha } = useGoogleReCaptcha()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,12 +23,24 @@ export default function Contact() {
     setIsSubmitting(true)
 
     try {
+      // Get reCAPTCHA token
+      if (!executeRecaptcha) {
+        alert(t?.contact?.pleaseWait || 'Please wait a moment and try again.')
+        setIsSubmitting(false)
+        return
+      }
+
+      const recaptchaToken = await executeRecaptcha('submit_quote')
+
       const response = await fetch('/api/send-quote', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken
+        })
       })
 
       const data = await response.json()
