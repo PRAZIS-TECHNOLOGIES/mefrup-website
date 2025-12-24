@@ -3,11 +3,12 @@
 import { motion } from 'framer-motion'
 import { Award, CheckCircle, Shield, TrendingUp } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import { useMemo } from 'react'
 
 export default function Certifications() {
   const { t } = useLanguage()
 
-  const certifications = [
+  const certifications = useMemo(() => [
     {
       title: t?.certifications?.iatfTitle || 'IATF 16949:2016',
       description: t?.certifications?.iatfDescription || 'Automotive quality management system certified by DQS Germany.',
@@ -22,9 +23,9 @@ export default function Certifications() {
       icon: Award,
       color: 'bg-yellow-100 text-yellow-700',
     },
-  ]
+  ], [t])
 
-  const qualityFeatures = [
+  const qualityFeatures = useMemo(() => [
     t?.certifications?.qualityFeatures?.dqsAudited || 'DQS Germany Audited Processes',
     t?.certifications?.qualityFeatures?.oemQualified || 'Automotive OEM & ORM Qualified Supplier',
     t?.certifications?.qualityFeatures?.traceability || 'Full Product Traceability',
@@ -33,9 +34,9 @@ export default function Certifications() {
     t?.certifications?.qualityFeatures?.ppap || 'Production Part Approval Process (PPAP)',
     t?.certifications?.qualityFeatures?.spc || 'Statistical Process Control (SPC)',
     t?.certifications?.qualityFeatures?.fmea || 'Failure Mode Effects Analysis (FMEA)',
-  ]
+  ], [t])
 
-  const timeline = [
+  const timeline = useMemo(() => [
     {
       year: '2003-2015',
       title: t?.certifications?.timeline?.['2003']?.title || 'Foundation & Growth',
@@ -56,7 +57,7 @@ export default function Certifications() {
       title: t?.certifications?.timeline?.['2024']?.title || 'Market Expansion',
       description: t?.certifications?.timeline?.['2024']?.description || 'Growing certified automotive supply to international customers.',
     },
-  ]
+  ], [t])
 
   return (
     <section id="certifications" className="py-24 bg-gray-50">

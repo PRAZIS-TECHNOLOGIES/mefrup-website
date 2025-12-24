@@ -4,10 +4,11 @@ import { motion } from 'framer-motion'
 import { Target, Users, Lightbulb, Rocket } from 'lucide-react'
 import AnimatedCounter from './AnimatedCounter'
 import { useLanguage } from '@/context/LanguageContext'
+import { useMemo } from 'react'
 
 export default function About() {
   const { t } = useLanguage()
-  const values = [
+  const values = useMemo(() => [
     {
       icon: Target,
       title: t?.about?.manufacturing || 'Precision Manufacturing',
@@ -23,16 +24,23 @@ export default function About() {
       title: t?.about?.customSolutions || 'Custom Solutions',
       description: t?.about?.customSolutionsText || 'Engineering capability to develop and manufacture components to exact customer specifications.',
     },
-  ]
+  ], [t])
 
-  const industries = [
+  const industries = useMemo(() => [
     t?.about?.industries?.automotive || 'Automotive Manufacturing',
     t?.about?.industries?.heavyMachinery || 'Heavy Machinery',
     t?.about?.industries?.industrial || 'Industrial Equipment',
     t?.about?.industries?.production || 'Production Systems',
     t?.about?.industries?.oemDistributors || 'OEM Distributors',
     t?.about?.industries?.aftermarket || 'Aftermarket Supply',
-  ]
+  ], [t])
+
+  const stats = useMemo(() => [
+    { number: 22, suffix: '+', label: t?.about?.stats?.yearsLabel || 'Years of Excellence', animated: true },
+    { number: 100, suffix: '%', label: t?.about?.stats?.qualityLabel || 'OEM/ORM Quality Standards', animated: true },
+    { number: null, text: '24/7', label: t?.about?.stats?.supportLabel || 'Customer Support', animated: false },
+    { number: 2028, suffix: '', label: t?.about?.stats?.certificationLabel || 'Certification Valid Until', animated: true },
+  ], [t])
 
   return (
     <section id="about" className="py-24 bg-white">
@@ -185,12 +193,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="grid md:grid-cols-4 gap-8 mt-16"
         >
-          {[
-            { number: 22, suffix: '+', label: t?.about?.stats?.yearsLabel || 'Years of Excellence', animated: true },
-            { number: 100, suffix: '%', label: t?.about?.stats?.qualityLabel || 'OEM/ORM Quality Standards', animated: true },
-            { number: null, text: '24/7', label: t?.about?.stats?.supportLabel || 'Customer Support', animated: false },
-            { number: 2028, suffix: '', label: t?.about?.stats?.certificationLabel || 'Certification Valid Until', animated: true },
-          ].map((stat, index) => (
+          {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30, scale: 0.8 }}
